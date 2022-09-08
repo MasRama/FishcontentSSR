@@ -11,6 +11,35 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+@font-face {
+    font-family: 'Poppins' ;
+    src: url('/public/font/Poppins-Regular.ttf') format('truetype') ;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins' ;
+    src: url('/public/font/Poppins-Medium.ttf') format('truetype') ;
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins' ;
+    src: url('/public/font/Poppins-SemiBold.ttf') format('truetype') ;
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins' ;
+    src: url('/public/font/Poppins-Bold.ttf') format('truetype') ;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 *,
 ::before,
 ::after {
@@ -1217,7 +1246,7 @@ h5 {
 }
 
 .bg-login {
-  background-image: url('../../public/images/texture.png') ;
+  background-image: url('../../public/images/texture.webp') ;
 }
 
 .bg-cover {
