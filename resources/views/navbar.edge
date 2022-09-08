@@ -1,41 +1,20 @@
-<<<<<<< HEAD
 <script src="./js/swiper-bundle.js" defer></script>
 <script src="./js/navbar.js" defer></script>
 <script src="./js/flowbiteCdn.js" defer></script>
 
 @if(isLogin)
-=======
-<script>
-    import {Cdn} from '../scripts/flowbiteCdn'
-    import {Navigation} from '../scripts/navbar'
-    export let isLogin
-    onMount(async () => {
-        Navigation()
-        Cdn()
-    });
-</script>
-
-{#if isLogin}
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
 <nav class="">
   <div class="container relative flex justify-between mx-auto py-6">
     <a class="flex items-center gap-4 " href="/">
       <img
-<<<<<<< HEAD
         src="../../images/icon.png"
         alt="logo"
         class="max-w-[3rem] rounded-md"
-=======
-        src="../../images/icon.webp"
-        alt="logo"
-        class="w-[3rem] h-12 rounded-md"
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
       />
       <span class="text-base max-w-[7rem] md:text-lg md:max-w-max lg:text-2xl uppercase font-bold ">fishcontent indonesia</span>
     </a>
     <div class=" flex lg:hidden items-center">
       <button class="nav__toggler">
-<<<<<<< HEAD
           <i class="fa-solid fa-bars text-3xl " ></i>
       </button>
     </div>
@@ -44,16 +23,6 @@
       <li><a href="/edukasi"  class="link ">edukasi</a></li>
       <li><a href="/sharing"  class="link">sharing</a></li>
       <li><a href="/"  class="link">belanja</a></li>
-=======
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-      </button>
-    </div>
-    <ul class="nav__links rounded-lg hidden absolute top-24 left-0 w-full flex-col gap-6 p-14 bg-white z-10 shadow-2xl lg:static lg:flex lg:p-0 lg:bg-inherit lg:flex-row items-center lg:shadow-none  lg:w-max lg:rounded-none lg:gap-8 xl:gap-12 list-none  ">
-      <li><a href="/home" use:inertia class="link">beranda</a></li>
-      <li><a href="/edukasi" use:inertia class="link ">edukasi</a></li>
-      <li><a href="/sharing" use:inertia class="link">sharing</a></li>
-      <li><a href="/" use:inertia class="link">belanja</a></li>
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
        <button
           class="focus:outline-none text-white btn btn-primary hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
           type="button"
@@ -67,11 +36,7 @@
     <aside id="drawer-right-example" class="rounded fixed z-40 h-screen p-4 overflow-y-auto w-72  bg-login   bg-cover bg-center sm:bg-1.25  bg-no-repeat " tabindex="-1" aria-labelledby="drawer-right-example" >
       <div class="overflow-y-auto py-4 px-3 bg-transparent rounded ">
           <a href="/" class="flex items-center pl-2.5 mb-5">
-<<<<<<< HEAD
           <img src="../../images/icon.png" alt="logo" class="mr-5 h-11 sm:h-11 rounded-full" />
-=======
-          <img src="../../images/icon.webp" alt="logo" class="mr-5  w-12 h-12 sm:h-11 rounded-full" />
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
           <span class="self-center text-xl font-semibold whitespace-nowrap ">Fishcontent <br />Indonesia</span>
           </a>
           <ul class="space-y-2">
@@ -164,11 +129,7 @@
                   clip-rule="evenodd"
                   ></path>
               </svg>
-<<<<<<< HEAD
               <span action="/logout" method="POST" class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
-=======
-              <span use:inertia="{{ href: '/logout', method: 'post' }}" class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
               </a>
           </li>
           <li>
@@ -189,7 +150,6 @@
           
   </div>
 </nav>
-<<<<<<< HEAD
   @else
   <nav class="">
     <div class="container relative flex justify-between mx-auto py-6">
@@ -198,53 +158,24 @@
           src="images/icon.png"
           alt="logo"
           class="max-w-[3rem] rounded-md"
-=======
-  {:else}
-  <nav class="">
-    <div class="container relative flex justify-between mx-auto py-6">
-      <a class="flex items-center gap-4 " use:inertia href="/">
-        <img
-          src="images/icon.webp"
-          alt="logo"
-          class="w-[3rem] h-12 rounded-md"
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
         />
         <span class="text-base max-w-[7rem] md:text-lg md:max-w-max lg:text-2xl uppercase font-bold">fishcontent indonesia</span>
       </a>
       <div class=" flex lg:hidden items-center">
         <button class="nav__toggler">
-<<<<<<< HEAD
             <i class="fa-solid fa-bars text-3xl " ></i>
-=======
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
         </button>
         
       </div>
       <ul class="nav__links rounded-lg hidden absolute top-24 left-0 w-full flex-col gap-6 p-14 bg-white z-50 shadow-2xl lg:static lg:flex lg:p-0 lg:bg-inherit lg:flex-row items-center lg:shadow-none  lg:w-max lg:rounded-none lg:gap-8 xl:gap-12 list-none  ">
-<<<<<<< HEAD
         <li><a href="/home"  class="link">beranda</a></li>
         <li><a href="/edukasi"  class="link">edukasi</a></li>
         <li><a href="/sharing"  class="link">sharing</a></li>
         <li><a href="/home"  class="link">belanja</a></li>
       
         <a href="/login" class="btn btn-primary"> Login </a>
-=======
-        <li><a href="/home" use:inertia class="link">beranda</a></li>
-        <li><a href="/edukasi" use:inertia class="link">edukasi</a></li>
-        <li><a href="/sharing" use:inertia class="link">sharing</a></li>
-        <li><a href="/home" use:inertia class="link">belanja</a></li>
-      
-        <a href="/login" use:inertia class="btn btn-primary"> Login </a>
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
 
       </ul>
     </div>
   </nav>
-<<<<<<< HEAD
 @endif
-=======
-{/if}
-
-
->>>>>>> 0a73cb48c6459a7e18cf17facd2173e9b3d3ca88
