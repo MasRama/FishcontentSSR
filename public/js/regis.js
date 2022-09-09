@@ -1,7 +1,9 @@
+// const { formatDiagnostic } = require("typescript");
+
 // validate function
 const validateEmail = (e) => {
     const value = e.value;
-    if (!value.match(/[a-z]@[a-z]{4,}[.]/g)) return { isValid : false ,message : "Format email salah"}
+    if (!value.match(/[a-zA-Z1-9]@[a-z]{4,}[.]/g)) return { isValid : false ,message : "Format email salah"}
     return { isValid: true, message: '' }
 }
 const validateTel = (e) => {
@@ -101,35 +103,61 @@ passwords.forEach((e, i) => {
 
 
 const createDD = ({ id, name }) => {
+
     return `
-        <option value=${id}>${name}</option>
+        <option value=${name.replaceAll(" ",'')} >${name}</option>
     `
 }
 
 const renderDropdown = async (url, parent) => {
-    fetch(url)
-        .then(r => r.json())
-        .then(r => {
-            r.sort( (p,n) => p.name.localeCompare(n.name))
-            parent.innerHTML = `
-            <option value="" disabled selected>Pilihan ${parent.name}</option> 
-        `+ r.map(e => createDD(e)).join('')
-        })
-        // .catch(err => )
+
+    let res = await fetch(url);
+    res = await res.json();
+    res.sort((p, n) => p.name.localeCompare(n.name))
+    parent.innerHTML = `
+        <option value="" disabled selected>Pilihan ${parent.name}</option> 
+    `+ res.map(e => createDD(e)).join('');
+
+    return res;
+
+
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async() => {
     const provIn = document.querySelector('#prov-in');
     const kabIn = document.querySelector('#kab-in');
     const kelIn = document.querySelector('#kel-in');
+    const submit = document.querySelector('input[type="submit"]')
+
+    let provinsi, kabupaten;
 
     if (provIn) {
-        renderDropdown('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json', provIn);
-        provIn.addEventListener('change',({ target }) => {
-            renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${target.value}.json`, kabIn);
+        provinsi = await renderDropdown('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json', provIn);
+        provIn.addEventListener('change', async({ target }) => {
+            const id = provinsi.find(e => e.name.replaceAll(' ', '') === target.value).id;
+            kabupaten = await renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${id}.json`, kabIn);
         })
-        kabIn.addEventListener('change',({ target }) => {
-            renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${target.value}.json`, kelIn)
+        kabIn.addEventListener('change', async({ target }) => {
+            const id = kabupaten.find(e => e.name.replaceAll(' ', '') === target.value).id;
+            console.log(kabupaten)
+            console.log(target.value)
+            console.log(id)
+
+           renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${id}.json`, kelIn)
         })
     }
+    // submit 
+    form.addEventListener('submit', (event) => {
+        
+        const isOtherValid = [...inputs].filter(v => v.name !== 'detail').map(e => validateAll(e));
+        const isValidPassword = [...passwords].map((e, i) => {
+            if (i === 0) return validateAll(e);
+            else {
+                return checkIsSame(passwords[1], passwords[0]);
+            }
+        })
+        const isValidAddress = [...selects].map(e => validateAll(e));
+        const isCanSubmit = [...isOtherValid, ...isValidPassword, ...isValidAddress].every(e => e);
+        if (!isCanSubmit) event.preventDefault()
+    })
 });
