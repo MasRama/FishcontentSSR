@@ -1,14 +1,21 @@
-<script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FishContent Indonesia</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
   
-    
-</script>
+  <script src="./js/login.js" defer></script>
+  
+</head>
 
   <body class=" bg-login bg-cover min-h-screen  font-poppins  ">
     <header class="">
         <nav class="">
             <div class="container relative flex justify-between lg:justify-end mx-auto py-6 ">
-              <a class="flex items-center gap-4 " use:inertia href="/" >
+              <a class="flex items-center gap-4 "  href="/" >
                 <img
                   src="../images/icon.webp"
                   alt="logo"
@@ -24,33 +31,30 @@
         <div class="w-11/12  max-w-lg lg:max-w-screen-2xl flex flex-col gap-6 lg:gap-0 mx-auto justify-center lg:flex-row lg:justify-between  ">
             <div class="basis-2/5 lg:mt-[1%]">
                 <h2 class="text-center text-2xl mb-5 leading-normal lg:text-left lg:text-3xl xl:text-4xl xl:leading-[1.6] lg:leading-[1.6] ">Jadilah bagian dari FishContent Indonesia untuk menikmati fasilitas yang ada.</h2>
-                <p class="text-lg hidden lg:block font-medium opacity-100">Belum memililki akun? lakukan registrasi <a class="text-blue-700" use:inertia href="/regis"> disini!</a></p>
+                <p class="text-lg hidden lg:block font-medium opacity-100">Belum memililki akun? lakukan registrasi <a class="text-blue-700"  href="/regis"> disini!</a></p>
             </div>
             <div class="basis-96 ">
 
-                {#if error}
-                    <Toast color='red' myText={error} url='https://img.icons8.com/windows/50/minus.png' status='Error' myFunc={closeToast} />
-                {:else if success}
-                    <Toast color='green' myText={success} url='https://img.icons8.com/external-regular-kawalan-studio/344/external-comment-verify-chat-regular-kawalan-studio-5.png'  status='Berhasil' myFunc={closeToast} />
-                {/if}
+                
 
-                <form on:submit|preventDefault={handleSubmit}>
+                <form action="/login" method="POST">
                     <div class="relative mb-5">
                         <label for="email-in" class="text-base block lg:text-lg font-medium mb-1">Masukkan Email</label>
-                        <input type="email" bind:value="{email}" name="Email" class="input" id="email"  >
+                        <input type="email" value="email" name="email" class="input">
                         <small class="mt-2 text-red-600 hidden validate"></small>
                     </div>
                     <div class="relative mb-2 ">
                         <label for="password required-in" class="text-base block lg:text-lg font-medium mb-1">Masukkan password</label>
-                        <input type="password" bind:value="{password}" name="Password" class="input"  id="password" >
-                        <button class="absolute top-[72%] -translate-y-[50%] right-2.5 text-slate-400 hover:text-slate-800 "><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></button>
+                        <input type="password" value="password" name="password" class="input">
+                        <button class="absolute top-[72%] -translate-y-[50%] right-2.5 text-slate-400 hover:text-slate-800 "><i class="fa-solid fa-eye"></i></button>
                         <small class="text-red-600 mt-2 hidden validate"></small>
                     </div>
                     <a href="/" class="block text-right mb-8 ">lupa password?</a>
                     <input type="submit" value="Login" class="btn btn-third w-full">
-                    <p class="mt-5 text-base text-center  font-medium opacity-100 lg:hidden ">Belum memililki akun ?, lakukan registrasi <a class="text-blue-700" use:inertia href="/regis">disini!</a></p>
+                    <p class="mt-5 text-base text-center  font-medium opacity-100 lg:hidden ">Belum memililki akun ?, lakukan registrasi <a class="text-blue-700"  href="/regis">disini!</a></p>
                 </form>
             </div>
         </div>
     </main>
   </body>
+</html>

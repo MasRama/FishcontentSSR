@@ -23,3 +23,28 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ view }) => {
   return view.render('home')
 })
+
+Route.get('/edukasi', async ({ view }) => {
+  return view.render('edukasi')
+})
+
+Route.get('/sharing', async ({ view }) => {
+  return view.render('sharing')
+})
+
+Route.get('/login', async ({ view }) => {
+  return view.render('login')
+})
+
+Route.get('/regis', async ({ view }) => {
+  return view.render('regis')
+})
+
+Route.post('/regis', async ({ view, request }) => {
+  return JSON.stringify(request.all(), null, 2)
+})
+
+Route.post('/login', async ({ view, request }) => {
+  return request.all()
+})
+

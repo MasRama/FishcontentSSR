@@ -1,15 +1,20 @@
-<script>
-    import { inertia } from '@inertiajs/inertia-svelte'
-    import Navbar from '../Components/navbar.svelte'
-    import Footer from '../Components/footer.svelte';
-    export let isLogin
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FishContent Indonesia</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+        
+</head>
 
 
-
-    <body class="font-poppins">
+<body class="font-poppins">
         <header class="">
-            @include('navbar')
+            
+            @include('components/navbar')
+
         </header>
         <main>
             <div class="container mx-auto text-center mt-24 ">
@@ -41,6 +46,8 @@
                 <button class="btn btn-third mt-12">Read more</button>
             </div>
         </main>
-        <Footer/>
-    
+        
+        @include('components/footer')
+
     </body>
+</html>
