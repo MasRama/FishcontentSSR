@@ -1,4 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import User from 'App/Models/User'
 
 export default class AuthController {
   public async loginPage({ view }: HttpContextContract) {
@@ -30,30 +31,32 @@ export default class AuthController {
   }
 
 
-  public async regis({ request }: HttpContextContract) {
-    let Kab = request.input('kab')
-    let riilKab
-  if(Kab.substring(0,3) == 'KAB') {
-    riilKab = Kab.slice(0, 9) + ' ' + Kab.slice(9)
-  } else {
-    riilKab = Kab.slice(0, 4) + ' ' + Kab.slice(4)
-  }
+  public async regis({ request, view }: HttpContextContract) {
+    let kab = request.input('kab').replace(/;/g, ' ')
+    let kec = request.input('kec').replace(/;/g, ' ')
+    let prov = request.input('prov').replace(/;/g, ' ')
 
   function titleCase(str) {
     var splitStr = str?.toLowerCase().split(' ');
     for (var i = 0; i < splitStr?.length; i++) {
-   // You do not need to check if i is larger than splitStr length, as your for does that for you
-   // Assign it back to the array
    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-}
-// Directly return the joined string
+    }
      return splitStr?.join(' '); 
     }
 
-    let alamat = `${request.input('detail')}, Kec ${request.input('kec')}, ${riilKab}, ${request.input('prov')}, ${request.input('kd_pos')}`
+    let alamat = titleCase(`${request.input('detail')}, Kec ${kec}, ${kab}, ${prov}, ${request.input('kd_pos')}`) 
 
-  return titleCase(alamat)
-  JSON.stringify(request.all(), null, 2)
+    await User.create({
+      nama: request.input('nama'),
+      telp: request.input('telp'),
+      alamat: alamat,
+      email: request.input('email'),
+      password: request.input('password'),
+      is_verified: true
+     })
+
+     return view.render('login')
+
   }
 
   

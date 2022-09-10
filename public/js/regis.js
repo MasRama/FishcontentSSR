@@ -105,7 +105,7 @@ passwords.forEach((e, i) => {
 const createDD = ({ id, name }) => {
 
     return `
-        <option value=${name.replaceAll(" ",'')} >${name}</option>
+        <option value=${name.replaceAll(" ",';')} >${name}</option>
     `
 }
 
@@ -127,21 +127,18 @@ window.addEventListener('DOMContentLoaded', async() => {
     const provIn = document.querySelector('#prov-in');
     const kabIn = document.querySelector('#kab-in');
     const kelIn = document.querySelector('#kel-in');
-    const submit = document.querySelector('input[type="submit"]')
 
     let provinsi, kabupaten;
 
     if (provIn) {
         provinsi = await renderDropdown('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json', provIn);
         provIn.addEventListener('change', async({ target }) => {
-            const id = provinsi.find(e => e.name.replaceAll(' ', '') === target.value).id;
+            const id = provinsi.find(e => e.name.replaceAll(' ', ';') === target.value).id;
             kabupaten = await renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${id}.json`, kabIn);
         })
         kabIn.addEventListener('change', async({ target }) => {
-            const id = kabupaten.find(e => e.name.replaceAll(' ', '') === target.value).id;
-            console.log(kabupaten)
-            console.log(target.value)
-            console.log(id)
+            const id = kabupaten.find(e => e.name.replaceAll(' ', ';') === target.value).id;
+
 
            renderDropdown(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${id}.json`, kelIn)
         })
