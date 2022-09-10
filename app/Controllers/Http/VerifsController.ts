@@ -22,7 +22,6 @@ export default class VerifsController {
 
     return view.render('login', {success: 'Email anda telah terverifikasi, Silahkan Masuk'})
 
-    //return `${request.headers().host }/verify/${uuid}`
   }
 
   public async edit({}: HttpContextContract) {}

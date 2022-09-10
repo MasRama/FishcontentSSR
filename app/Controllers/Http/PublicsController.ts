@@ -1,8 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class PublicsController {
-  public async home({ view }: HttpContextContract) {
-    return view.render('home')
+  public async home({ view, auth }: HttpContextContract) {
+
+    if(auth.user) {
+      return auth.user
+    }
+
+    return view.render('home', {isLogin: 'yes'})
+
   }
 
   public async edu({ view }: HttpContextContract) {

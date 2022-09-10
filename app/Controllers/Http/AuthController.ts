@@ -16,7 +16,7 @@ export default class AuthController {
   }
 
 
-  public async login({ auth, request, view, response}: HttpContextContract) {
+  public async login({ auth, request, view }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
 
@@ -27,7 +27,7 @@ export default class AuthController {
         return view.render('login', {error: "Silahkan Verifikasi Email Anda Terlebih Dahulu"})
       }
 
-      return response.redirect('/home')  
+      return view.render('home')  
          
     } catch {
       return view.render('login', { error: 'Email/Password Salah, Silahkan coba lagi' })
