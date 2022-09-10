@@ -35,13 +35,15 @@
             </div>
             <div class="basis-96 ">
 
-                
+              @if(error || success)
                 @!component('components/toast', {
-                    src : "https://img.icons8.com/windows/50/minus.png",
-                    title : 'error',
-                    msg: 'failed to login '
+                  color : error ? 'red' : 'green',
+                  src : error ? 'https://img.icons8.com/windows/50/minus.png' : 'https://img.icons8.com/external-regular-kawalan-studio/344/external-comment-verify-chat-regular-kawalan-studio-5.png',
+                  title : error ? 'Error' : 'Berhasil',
+                  msg: error ? error : success
                 })
-               
+              @endif
+              
 
                 <form action="/login" method="POST">
                     <div class="relative mb-5">

@@ -26,15 +26,18 @@
     "@adonisjs/auth": "^8.2.2",
     "@adonisjs/core": "^5.8.6",
     "@adonisjs/lucid": "^18.1.0",
+    "@adonisjs/redis": "^7.3.1",
     "@adonisjs/repl": "^3.1.11",
     "@adonisjs/session": "^6.4.0",
     "@adonisjs/shield": "^7.1.0",
     "@adonisjs/view": "^6.2.0",
     "luxon": "^3.0.3",
+    "node-mailjet": "^5.1.1",
     "phc-argon2": "^1.1.3",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21",
-    "sqlite3": "^5.0.11"
+    "sqlite3": "^5.0.11",
+    "uuid": "^9.0.0"
   }
 }

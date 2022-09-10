@@ -30,7 +30,7 @@ Route.group(() => {
 }).middleware('auth')
 
 
-
+Route.resource('verify', 'VerifsController')
 
 Route.get('/login', 'AuthController.loginPage')
 Route.get('/regis', 'AuthController.regisPage')
