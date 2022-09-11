@@ -17,42 +17,283 @@
             @include('components/navbar')
 
         </header>
-        <main class="container mx-auto">
-            <h2 class="text-center mt-28">Ruang Edukasi</h2>
-            <p class="text-center mt-8">Tempat dimana kamu bisa belajar perikanan dan akuatik!</p>
-            <div class="mt-36" >
-                <section class=" py-6 text-center items-center gap-16 flex flex-col md:flex-row md:text-left md:py-36    ">
-                    <div class="basis-1/2">
-                        <img src="images/ed1.webp" alt="ini cupang" class="h-full mx-auto ">
+    
+<div class="min-h-full">
+    <header class="pb-24 bg-login bg-cover">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
+            <br><br><br>
+             </div>
+        </div>
+      </div>
+    </header>
+    <main class="-mt-24 pb-8">
+        <!-- wraping per bagian -->
+        <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
+          <!-- kolom kiri -->
+          <div class="grid grid-cols-1 gap-4 lg:col-span-2">
+            <!-- panel judul -->
+            <section aria-labelledby="profile-overview-title">
+              <div class="rounded-lg bg-white  overflow-hidden shadow">
+                  <div class="bg-white p-6">
+                  <div class="sm:flex sm:items-center sm:justify-between">
+                    <div class="sm:flex sm:space-x-5">
+                      <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
+                        <p class="text-xxl font-bold text-gray-900 sm:text-2xl">Ruang Edukasi</p>
+                        <p class="text-sm font-bold text-gray-600">Dimana kamu bisa belajar tentang aquatik dan perikanan</p>
+                      </div>
                     </div>
-                    <div class="basis-1/2">
-                        <h3 class="mb-5 text-xl font-bold lg:mb-12 xl:text-4xl">Cara berternak ikan cupang</h3>
-                        <p class="text-sm mb-12  lg:text-base xl:text-lg">Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia. </p>
-                        <button class="btn btn-third">Belajar sekarang</button>
-                    </div>
+                   
+                  </div>
+                </div>
+                <div class="border-t border-gray-200 bg-gray-50 grid grid-cols-1 divide-y divide-gray-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+                  <div class="px-6 py-5 text-sm font-medium text-center">
+                
+<div>
+    <label id="listbox-label" class="block text-sm font-medium text-gray-700"></label>
+    <div class="mt-1 relative">
+      <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+        <div class="flex items-center">
+          <span class="ml-3 block truncate"> Jenis </span>
+        </div>
+        <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+          <!-- Heroicon name: solid/selector -->
+          <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </button>  
+    </div>
+  </div>
+                  </div>
+  
+                  <div class="px-6 py-5 text-sm font-medium text-center">
+                    <div>
+                        <label id="listbox-label" class="block text-sm font-medium text-gray-700"></label>
+                        <div class="mt-1 relative">
+                          <button type="button" class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                            <div class="flex items-center">
+                              <span class="ml-3 block truncate"> Kategori </span>
+                            </div>
+                            <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                              <!-- Heroicon name: solid/selector -->
+                              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg>
+                            </span>
+                          </button>  
+                        </div>
+                      </div>
+                  </div>
+  
+                  <div class="px-6 py-5 text-sm font-medium text-center">
+                    <div class="max-w-xs mx-auto w-full lg:max-w-md">
+                        <div class="px-12 lg:px-0">
+                       <!-- Search -->
+              <div class="max-w-xs mx-auto w-full lg:max-w-md">
+                <label for="search" class="sr-only">Search</label>
+                <div class="relative text-white focus-within:text-gray-600">
+                  <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                    <!-- Heroicon name: solid/search -->
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <input id="search" class="block w-full text-gray-900 bg-white bg-opacity-20 py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 focus:text-gray-900 placeholder-white focus:outline-none focus:bg-opacity-100 focus:border-transparent focus:placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Search" type="search" name="search">
+                </div>
+              </div>
+                   </div>         
+                  </div>
+                </div>
+              </div>
+            </section>
+  
+            <!-- isi tengah -->
+            <section aria-labelledby="quick-links-title">
+              <div class="container mx-auto my-16 gap-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            <!-- baris 1 -->
+                <section class="flex flex-col transition-all duration-400 gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 hover:scale-[1.02] hover:shadow-3xl">
+                  <div class="rounded-xl">
+                    <img src="./../../images/ed1.webp" alt="cupang" class="h-full object-cover" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-3">Cara berternak ikan cupang</h3>
+                    <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                      Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                    </p>
+                    <button class="btn btn-third">Belajar sekarang</button>
+                  </div>
                 </section>
-                <section class=" py-6 text-center items-center gap-16 flex flex-col md:flex-row-reverse md:text-left md:py-36    ">
-                    <div class="basis-1/2">
-                        <img src="images/grapes.webp" alt="ini cupang" class="h-full mx-auto  ">
-                    </div>
-                    <div class="basis-1/2">
-                        <h3 class="mb-5 text-xl font-bold lg:mb-12 xl:text-4xl">Best Fresh Grapes </h3>
-                        <p class="text-sm mb-12  lg:text-base xl:text-lg">but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be.</p>
-                        <button class="btn btn-third">Buy now</button>
-                    </div>
+                <section class="flex flex-col gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 duration-200 hover:scale-[1.02] hover:shadow-3xl">
+                  <div class="rounded-xl">
+                    <img src="./../../images/betta.webp" alt="koki" class="h-full object-cover" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-3">cara merawat ikan koki</h3>
+                    <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                      Disini kamu akan belajar cara merawat ikan koki secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                    </p>
+                    <button class="btn btn-third">Belajar sekarang</button>
+                  </div>
                 </section>
-                <section class=" py-6 text-center items-center gap-16 flex flex-col md:flex-row md:text-left md:py-36    ">
-                    <div class="basis-1/2">
-                        <img src="images/gauva.webp" alt="ini cupang" class="h-full   mx-auto">
-                    </div>
-                    <div class="basis-1/2">
-                        <h3 class="mb-5 text-xl font-bold lg:mb-12 xl:text-4xl">Best Fresh Gauva </h3>
-                        <p class="text-sm mb-12  lg:text-base xl:text-lg">but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be.</p>
-                        <button class="btn btn-third">Buy now</button>
-                    </div>
+                <section class="flex flex-col gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 duration-200 hover:scale-[1.02] hover:shadow-3xl">
+                  <div class="rounded-xl">
+                    <img src="./../../images/ed1.webp" alt="aquas" class="h-full object-cover" />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-3">Cara membuat aquascape</h3>
+                    <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                      Disini kamu akan belajar cara membuat aquascape secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                    </p>
+                    <button class="btn btn-third">Belajar sekarang</button>
+                  </div>
                 </section>
-            </div>
-        </main>
+                <section class="flex flex-col transition-all duration-400 gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 hover:scale-[1.02] hover:shadow-3xl">
+                    <div class="rounded-xl">
+                      <img src="./../../images/ed1.webp" alt="cupang" class="h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold mb-3">Cara berternak ikan cupang</h3>
+                      <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                        Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                      </p>
+                      <button class="btn btn-third">Belajar sekarang</button>
+                    </div>
+                  </section>
+                  <section class="flex flex-col gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 duration-200 hover:scale-[1.02] hover:shadow-3xl">
+                    <div class="rounded-xl">
+                      <img src="./../../images/betta.webp" alt="koki" class="h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold mb-3">cara merawat ikan koki</h3>
+                      <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                        Disini kamu akan belajar cara merawat ikan koki secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                      </p>
+                      <button class="btn btn-third">Belajar sekarang</button>
+                    </div>
+                  </section>
+                  <section class="flex flex-col gap-10 bg-white p-8 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-4 duration-200 hover:scale-[1.02] hover:shadow-3xl">
+                    <div class="rounded-xl">
+                      <img src="./../../images/ed1.webp" alt="aquas" class="h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold mb-3">Cara membuat aquascape</h3>
+                      <p class="text-sm line-clamp-2 mb-6 hover:cursor-pointer hover:line-clamp-none">
+                        Disini kamu akan belajar cara membuat aquascape secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.
+                      </p>
+                      <button class="btn btn-third">Belajar sekarang</button>
+                    </div>
+                  </section>
+                
+              </div>
+            </section>
+          </div>
+  
+          <!-- kolom kanan -->
+          <div class="grid grid-cols-1 gap-4">
+            <!-- series belajar -->
+            <section aria-labelledby="announcements-title">
+              <div class="rounded-lg bg-white overflow-hidden shadow">
+                <div class="p-6">
+                  <h2 class="text-base font-medium text-gray-900" id="announcements-title">Materi Batch</h2>
+                  <div class="flow-root mt-6">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
+                      <li class="py-5">
+                        <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                          <h3 class="text-sm font-semibold text-gray-800">
+                            <a href="#" class="hover:underline focus:outline-none">
+                              <!-- Extend touch target to entire panel -->
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                              Cupang Series
+                            </a>
+                          </h3>
+                          <p class="mt-1 text-sm text-gray-600 line-clamp-2">Materi tentang cupang lengkap , mulai dari teknik beternak dan perawatanya.</p>
+                        </div>
+                      </li>
+  
+                      <li class="py-5">
+                        <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                          <h3 class="text-sm font-semibold text-gray-800">
+                            <a href="#" class="hover:underline focus:outline-none">
+                              <!-- Extend touch target to entire panel -->
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                              Aquascape Series
+                            </a>
+                          </h3>
+                          <p class="mt-1 text-sm text-gray-600 line-clamp-2">Belajar aquascape lengkap mulai dari pemula.</p>
+                        </div>
+                      </li>
+  
+                      <li class="py-5">
+                        <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                          <h3 class="text-sm font-semibold text-gray-800">
+                            <a href="#" class="hover:underline focus:outline-none">
+                              <!-- Extend touch target to entire panel -->
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                              chana series
+                            </a>
+                          </h3>
+                          <p class="mt-1 text-sm text-gray-600 line-clamp-2">Materi tentang chana lengkap , mulai dari teknik beternak dan perawatanya.</p>
+                        </div>
+                      </li>
+                      <li class="py-5">
+                        <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                          <h3 class="text-sm font-semibold text-gray-800">
+                            <a href="#" class="hover:underline focus:outline-none">
+                              <!-- Extend touch target to entire panel -->
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                              Salt Water series
+                            </a>
+                          </h3>
+                          <p class="mt-1 text-sm text-gray-600 line-clamp-2">Mari belajar tentang ikan hias air asin.</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- lihat semua -->
+                  <div class="mt-6">
+                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Lihat Semua </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+  
+            <!-- baru diakses -->
+            <section aria-labelledby="recent-hires-title">
+              <div class="rounded-lg bg-white overflow-hidden shadow">
+                <div class="p-6">
+                  <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Baru Dibuka</h2>
+                  <div class="flow-root mt-6">
+                    <ul role="list" class="-my-5 divide-y divide-gray-200">
+                      <li class="py-4">
+                        <div class="flex items-center space-x-4">
+                          <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium">Cara berternak ikan cupang</p>
+                          </div>
+                          <div>
+                            <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50"> Lihat </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mt-6">
+                    <a href="#" class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> Lihat Semua </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+       
+      </div>
+    </footer>
+  </div>
+  
 
         @include('components/footer')
 

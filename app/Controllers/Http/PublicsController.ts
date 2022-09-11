@@ -1,21 +1,19 @@
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 
 export default class PublicsController {
   public async home({ view, auth }: HttpContextContract) {
-  
-   if(auth.user) {
-    return view.render('home')
-   }
-    return view.render('home', {isLogin: 'no'})
-
+    if (auth.user) {
+      return view.render("home");
+    }
+    return view.render("home", { isLogin: "no" });
   }
 
   public async edu({ view }: HttpContextContract) {
-    return view.render('edukasi')
+    return view.render("edukasi");
   }
 
   public async sharing({ view }: HttpContextContract) {
-    return view.render('sharing')
+    return view.render("sharing");
   }
 
   public async show({}: HttpContextContract) {}
