@@ -40,6 +40,15 @@ form.addEventListener('submit', (event) => {
     }
 });
 
+const password = document.querySelector('[type="password"]');
+const passwordHint = password.nextElementSibling;
+passwordHint.addEventListener('click', (event) => {
+    event.preventDefault();
+    passwordHint.classList.toggle('expanded');
+    passwordHint.classList.contains('expanded') ? password.type = 'text' : password.type = 'password';
+
+});
+
 
 
 function closeToast() {
