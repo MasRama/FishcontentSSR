@@ -7,7 +7,7 @@
 <h2> Installation : </h2>
 <li> Clone this project
 <li> type <code>npm install</code>
-<li> pay attention to .env file, match with ur environment
+<li> pay attention to <code>.env</code> file, match with ur environment (see <code>.env.example</code>)
 <li> make empty <code>tmp</code> folder (used for sqlite)
 <li> type <code>node ace migration:run</code>
 <li> optional : run seeder with <code>node ace db:seed</code>
