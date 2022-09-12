@@ -47,6 +47,7 @@
               
 
                 <form action="/login" method="POST">
+                  {{ csrfField() }}
                     <div class="relative mb-5">
                         <label for="email-in" class="text-base block lg:text-lg font-medium mb-1">Masukkan Email</label>
                         <input type="email" name="email" class="input">

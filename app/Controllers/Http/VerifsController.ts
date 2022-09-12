@@ -15,7 +15,7 @@ export default class VerifsController {
     const uuidRedis = await Redis.get(params.id)
 
      if(!uuidRedis) {
-      return `Where do you go? :)`
+      return `<h4>Where do you go? :)</h4>`
     }
 
     await User.query().where('email', uuidRedis).update({is_verified: true}) 

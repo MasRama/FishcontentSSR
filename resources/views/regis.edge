@@ -34,6 +34,7 @@
             </div>
             <div class="basis-[45%] ">
                 <form action="/regis" method="POST" class="width-full">
+                    {{ csrfField() }}
                     <div class="flex flex-col sm:flex-row   gap-2 lg:gap-8">
                         <div class=" basis-1/2 relative mb-2">
                             <label for="name-in" class="text-base block lg:text-lg font-medium mb-1">Nama</label>
