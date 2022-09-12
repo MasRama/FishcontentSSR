@@ -19,6 +19,7 @@ export default class VerifsController {
     }
 
     await User.query().where('email', uuidRedis).update({is_verified: true}) 
+    await Redis.del(params.id)
 
     return view.render('login', {success: 'Email anda telah terverifikasi, Silahkan Masuk'})
 

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @entryPointStyles('app')
+
+    <script src="../js/login.js" defer></script>
+
 </head>
 <body class="font-poppins bg-gradient-to-tr from-red-50 to-blue-50">
     <div class="w-[90%] max-w-screen-lg mx-auto py-6">
@@ -19,10 +22,19 @@
                 <h1 class="text-2xl sm:text-3xl font-bold mb-3 lg:mb-5">Lupa password ?</h1>
                 <p class="text-sm sm:text-base mb-6 lg:mb-9">Masukkan email anda untuk mendapatkan link untuk melakukan reset password</p>
             </div>
-            <form action="post" class="w-full ">
+
+            @if(error)
+                @!component('components/toast', {
+                  color : 'red',
+                  src : 'https://img.icons8.com/windows/50/minus.png',
+                  title : 'Error',
+                  msg: error
+                })
+              @endif
+
+            <form action="/reset" method="POST" class="w-full ">
                 <label class=" text-base font-semibold block mb-2 lg:mb-4" for="email">Email</label>
-                <input type="email" class="w-full h-10 sm:h-12 py-2 px-5 ring-1 mb-2 ring-gray-300 outline-1 focus:outline-orange-300 invalid:outline-red-500 focus:invalid:outline-red-500 rounded-md block placeholder:text-sm peer" id="email" placeholder="Input your email here.." required>
-                <small class="hidden peer-invalid:block text-xs text-red-500 animate-fade  ">Email tidak boleh kosong</small>
+                <input type="email" name="email" class="w-full h-10 sm:h-12 py-2 px-5 ring-1 mb-2 ring-gray-300 outline-1 focus:outline-orange-300 invalid:outline-red-500 focus:invalid:outline-red-500 rounded-md block placeholder:text-sm peer" id="email" placeholder="Masukan email anda" required>
                 <input type="submit" class="btn btn-secondary w-full mt-6 lg:mt-8" value="kirim">
             </form>
         </section>

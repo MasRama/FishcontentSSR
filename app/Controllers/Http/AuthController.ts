@@ -2,16 +2,26 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import Redis from '@ioc:Adonis/Addons/Redis'
 import { v4 as uuidv4 } from 'uuid';
-import mailSend from '../../../resources/js/mailSend'
+import verifSend from '../../../resources/js/verifSend'
 
 
 export default class AuthController {
-  public async loginPage({ view }: HttpContextContract) {
+  public async loginPage({ view, auth }: HttpContextContract) {
+
+    if(auth.user) {
+      return view.render('home')
+     }
+
     return view.render('login')
   }
 
 
-  public async regisPage({ view }: HttpContextContract) {
+  public async regisPage({ view, auth }: HttpContextContract) {
+
+    if(auth.user) {
+      return view.render('home')
+     }
+
     return view.render('regis')
   }
 
@@ -62,7 +72,7 @@ export default class AuthController {
      const uuid = uuidv4()
      await Redis.setex(uuid, 86400, request.input('email'))
       let url = `${request.headers().host }/verify/${uuid}`
-      mailSend(request.input('email'), url)
+      verifSend(request.input('email'), url)
 
      return view.render('login', {success: 'Silahkan verifikasi email anda'})
 

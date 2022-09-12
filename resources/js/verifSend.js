@@ -4,7 +4,7 @@ const mailjet = Mailjet.apiConnect(
     'd4a33965e9a93e343405f83a9d90a6b2',
 );
 
-function mailSend(emailTo, link) {
+function verifSend(emailTo, link) {
   const request = mailjet
   .post('send', { version: 'v3.1' })
   .request({
@@ -496,4 +496,4 @@ request
 })
 } 
 
-module.exports = mailSend 
+module.exports = verifSend

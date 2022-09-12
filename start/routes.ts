@@ -29,12 +29,15 @@ Route.group(() => {
 
 }).middleware('auth')
 
-
 Route.resource('verify', 'VerifsController')
+
+Route.resource('reset', 'ResetsController')
 
 Route.get('/login', 'AuthController.loginPage')
 Route.get('/regis', 'AuthController.regisPage')
 
+
+Route.post('/reset/:id', 'ResetsController.newPass')
 Route.post('/regis', 'AuthController.regis')
 Route.post('/login', 'AuthController.login')
 
