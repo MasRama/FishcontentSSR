@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishContent Indonesia</title>
+    @entryPointStyles('app')
+
+    <link rel="icon" type="image/png" href="../images/icon.webp">
+
+</head>
+
+<body class="font-poppins min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-50 to-blue-50 ">
+    <main class="w-full">
+         <div class="w-[90%] max-w-lg flex flex-col items-center mx-auto  bg-white shadow-xl p-6 sm:p-12 rounded-xl text-black">
+            <svg class="w-6 h-6 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
+            <h1 class=" text-xl sm:text-2xl font-bold mb-3">Password Reset</h1>
+            <p class="text-sm text-center sm:text-base mb-6 sm:mb-8">Masukkan password anda yang baru lalu ulangi</p>
+            <form action="/reset/{{uuid}}" class="w-full" method="POST">
+                {{ csrfField() }}
+                <a href="/login" class="block mb-4 text-sm text-blue-500 font-semibold">Kembali untuk login</a>
+                <div class=" relative mb-4 md:mb-6 ">
+                    <label for="password-in" class="text-sm text-gray-600 sm:text-base block lg:text-lg font-medium mb-1">Password baru</label>
+                    <input type="password" name="password" value="" class="input" id="password"   >
+                    <button class="absolute top-10 right-2.5 fill-slate-600 hover:fill-slate-800 "><svg class="w-5 h-5 fill-inherit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></i></button>
+                    <small class="text-red-600 mt-2 hidden validate"></small>
+                </div>
+                <div class=" relative ">
+                    <label for="passwordConfirm-in" class="text-sm text-gray-600 sm:text-base block lg:text-lg font-medium mb-1">Konfirmasi Password baru</label>
+                    <input type="password" name="confirm_ps" value="" class="input" id="confirm_ps" >
+                    <button class="absolute top-10 right-2.5 fill-slate-600 hover:fill-slate-800 "><svg class="w-5 h-5 fill-inherit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></i></button>
+                    <small class="text-red-600 mt-2 hidden validate">Password tidak sama</small>
+                </div>
+                <input type="submit" value="Konfirmasi" class="btn btn-third mt-10 sm:mt-12 w-full sm:w-max"/>
+            </form>
+
+         </div>
+    </main>
+</body>
+<script src="../js/reset.js" defer></script>
+</html>

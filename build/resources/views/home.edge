@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FishContent Indonesia</title>
+  @entryPointStyles('app')
+
+  <link rel="icon" type="image/png" href="../images/icon.webp">
+        
+</head>
+
+<body class="font-poppins">
+        <header class="bg-slate-100">
+            @include('components/navbar')
+          <section class="swiper hero-sections h-max  lg:h-[87vh]">
+            <div class="swiper-wrapper flex items-center pb-24">
+                <div class="swiper-slide flex items-center">
+                    <div class="container mx-auto flex flex-col-reverse text-center items-center justify-between gap-8 lg:gap-16 lg:flex-row lg:text-left">
+                        <div class=" basis-[40%] ">
+                            <h1 class=" mb-6 text-4xl  font-bold md:text-5xl lg:leading-snug lg:text-6xl lg:mb-8">Fishcontent Indonesia</h1>
+                            <p class="text-base lg:text-lg">Platform komunitas perikanan dan akuatik di Indonesia</p>
+                            <div class="mt-16 lg:mt-24">
+                                <a href="/" class="btn btn-secondary inline py-4">Tentang kami</a>
+                            </div>
+                        </div>  
+                        <div class="basis-[50%]">
+                            <img src="images/logo.webp" class="w-full h-full" alt="fishcontent">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex items-center">
+                    <div class="container mx-auto flex flex-col-reverse text-center items-center justify-between gap-8 lg:gap-16 lg:flex-row lg:text-left ">   
+                        <div class=" basis-[50%] ">
+                            <h1 class=" mb-6 text-4xl  font-bold md:text-5xl lg:leading-snug lg:text-6xl lg:mb-8">Belanja produk aquatik cuma tinggal klik!</h1>
+                            <p class="text-base lg:text-lg">Dapatkan ikan dan produk aquatik bekualitas langsung dari tangan pertama!</p>
+                            <div class="mt-16 lg:mt-24">
+                                <a href="/" class="btn btn-secondary inline py-4">Ayo belanja</a>
+                            </div>
+                        </div>  
+                        <div class="basis-[50%] w-fit">
+                            <img  src="images/landing1.webp" class="w-full h-full" alt="fishcontent">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex items-center">
+                    <div class="container mx-auto flex flex-col-reverse text-center items-center justify-between gap-8 lg:gap-16 lg:flex-row lg:text-left">
+                        <div class=" basis-[50%] ">
+                            <h1 class=" mb-6 text-4xl  font-bold md:text-5xl lg:leading-snug lg:text-6xl lg:mb-8">Sharing dengan para ahli!</h1>
+                            <p class="text-base lg:text-lg">Diskusi dan Konsultasi bersama rekan-rekan yang kompeten di bidang aquatik dan perikanan</p>
+                            <div class="mt-16 lg:mt-24">
+                                <a href="/" class="btn btn-secondary inline py-4">Sharing</a>
+                            </div>
+                        </div>  
+                        <div class="basis-[50%]">
+                            <img  src="images/anemon.webp" class="w-full h-full" alt="fishcontent">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex items-center">
+                    <div class="container mx-auto flex flex-col-reverse text-center items-center justify-between gap-8 lg:gap-16 lg:flex-row lg:text-left">
+                        <div class=" basis-[50%] ">
+                            <h1 class=" mb-6 text-4xl  font-bold md:text-5xl lg:leading-snug lg:text-6xl lg:mb-8">Ayo belajar akuatik dan perikanan!</h1>
+                            <p class="text-base lg:text-lg">Edukasi seputar Akuatik dan Perikanan menarik dan menyenangkan!</p>
+                            <div class="mt-16 lg:mt-24">
+                                <a href="/" class="btn btn-secondary inline py-4">Belajar</a>
+                            </div>
+                        </div>  
+                        <div class="basis-[50%]">
+                            <img alt="tester" class="w-full h-full" src="images/edukasi.webp" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+         </section>
+        </header>
+        <main>
+            <section class="container mx-auto flex flex-col  py-16 items-center text-center lg:py-52 lg:flex-row lg:text-left">
+                <div class="basis-1/2 ">
+                    <img class="mx-auto w-full h-full" src="images/sam2.webp" alt="">
+                </div>
+                <div class="basis-1/2 pr-4 ">  
+                    <h2 class="mb-8 ">Tentang kami</h2>
+                    <p class=" text-base leading-relaxed mb-4 lg:text-lg "><b>Fishcontent Indonesia</b> adalah startup dan platform komunitas pecinta aquatik di indonesia yang berdiri pada tahun 2019. Yang melatarbelakangi berdirinya startup ini adalah keragaman biota air dan Perikanan di indonesia sangatlah besar. </p>
+                    <p class="text-base leading-relaxed lg:text-lg">Namun untuk merawat atau membudidayakanya seringkali banyak orang yang belum faham mengenai tata cara yang benar dan butuh edukasi. Untuk itu platform ini hadir sebagai sarana edukasi untuk masyarakat indonesia. </p>
+                </div>
+            </section>
+            <section class="container mx-auto text-center mt-16 ">
+                <h2 class="mb-8">Testimoni</h2>
+                <p class="text-base lg:text-lg">Beberapa testimoni dari anggota komunitas dan pelanggan</p>
+                <div class="swiper testimonial h-max gap-y-12 lg:mt-16 ">
+                    <div class="swiper-wrapper mt-8 pb-24 flex items-center">
+                        <div class="swiper-slide flex justify-center items-start ">
+                            <div class=" shadow-xl py-10 px-8 flex flex-col items-center  rounded-xl w-11/12 lg:w-[800px] hover:shadow-2xl hover:scale-[1.02] duration-300 ">
+                                <img class="w-[7rem] h-[7rem] mb-3" src="images/client2.webp" alt="">
+                                <h5 class="mb-6">Diana Pungki</h5>
+                                <p class="text-sm">Saya suka sekali merawat ikan hias. Namun entah kenapa ikan rawatan saya selalu mati terus. saya bingung solusinya bagaimana. Setelah kenal platform ini saya belajar cara merawat ikan yang benar ternyata selama ini saya salah dalam pemberian pakan. Dari yang telah saya pelajari di platform ini pembrian pakan yang berlebihan juga dapat menyebabkan kematian pada ikan. platform ini sangat cocok untuk belajar mengenai perikanan. </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center items-start">
+                            <div class="shadow-xl py-10 px-8 flex flex-col items-center  rounded-xl w-11/12 lg:w-[800px] hover:shadow-2xl hover:scale-[1.02] duration-300 ">
+                                <img class="w-[7rem] h-[7rem] mb-3" src="images/client3.webp" alt="">
+                                <h5 class="mb-6">Ferrari firmansyah</h5>
+                                <p class="text-sm">Saya adalah peternak ikan, saya kesulitan untuk memasarkan ikan saya. Dengan aplikasi ini saya belajar bagaimana pemasaran di sektor perikanan. Alhamdulillah sekarang saya dapat menjangkau pelanggan di area yang lebih luas.  </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center items-start ">
+                            <div class=" shadow-xl py-10 px-8 flex flex-col items-center rounded-xl w-11/12 lg:w-[800px] hover:shadow-2xl hover:scale-[1.02] duration-300 ">
+                                <img class="w-[7rem] h-[7rem] mb-3" src="images/client1.webp" alt="">
+                                <h5 class="mb-6">Fatqan Ramadiansyah</h5>
+                                <p class="text-sm">Sebagai pecinta aquatik saya sayang senang dengan adanya platform ini. Hobi saya pada dunia perikanan bisa tersalurkan. Juga saya tidak perlu bingung lagi untuk mencari produk-produk perikanan yang berkualitas karena adanya platform ini. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination -bottom-3"></div>
+                </div>
+            </section>
+            
+            <section class="mt-36" >
+                <h2 class="mb-16 text-4xl tracking-tight font-bold text-center  ">Hubungi kami</h2>
+                <div class="bg-white container mx-auto  flex flex-col-reverse justify-between lg:flex-row lg:mb-8 ">
+                    <div class="py-8 lg:py-16 px-4  basis-[768px]">
+                        
+                        <form action="/" class="space-y-8">
+                            <div>
+                                <label for="nama" class="block mb-2 text-sm font-medium ">Nama </label>
+                                <input type="text" id="nama" class=" shadow-sm bg-gray-50 border border-gray-300 rounded-lg  outline-none focus:border-orange-500 block w-full p-2.5 duration-300       "   placeholder="Nama Anda" required>
+                            </div>
+                            <div>
+                                <label for="telp" class="block mb-2 text-sm font-medium">Nomor WhatsApp</label>
+                                <input type="tel" id="telp" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm  outline-none focus:border-orange-500 duration-300     "  placeholder="08....." required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+                                <input type="email" id="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm  outline-none focus:border-orange-500 duration-300      "  placeholder="email@mail.com" required>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block mb-2 text-sm font-medium ">Pesan :</label>
+                                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 outline-none  focus:border-orange-500 duration-300       "  placeholder="Pesan Anda..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Send message</button>
+                        </form>
+                    </div>
+                    <div class=" flex basis-auto items-center ">
+                        <img class="mx-auto w-full h-max bg-cover"  src="images/betta.webp" alt="">
+                    </div>
+                </div>
+            </section>
+        </main>
+        @include('components/footer')
+   
+      </body>
+      
+      
+</html>
