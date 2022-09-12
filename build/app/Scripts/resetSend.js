@@ -1,27 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.resetSend = void 0;
 const Mailjet = require('node-mailjet');
-const mailjet = Mailjet.apiConnect(
-    '6a3d5e8f499ff38748c598edd59b063d',
-    'd4a33965e9a93e343405f83a9d90a6b2',
-);
-
+const mailjet = Mailjet.apiConnect('6a3d5e8f499ff38748c598edd59b063d', 'd4a33965e9a93e343405f83a9d90a6b2');
 function resetSend(emailTo, link) {
     const request = mailjet
-    .post('send', { version: 'v3.1' })
-    .request({
-      Messages: [
-        {
-          From: {
-            Email: "noreply@fishcontent.my.id",
-            Name: "FishContent ID"
-          },
-          To: [
+        .post('send', { version: 'v3.1' })
+        .request({
+        Messages: [
             {
-              Email: emailTo,
-              Name: " "
-            }
-          ],
-          Subject: "Reset Password",
-          HTMLPart: `<!doctype html>
+                From: {
+                    Email: "noreply@fishcontent.my.id",
+                    Name: "FishContent ID"
+                },
+                To: [
+                    {
+                        Email: emailTo,
+                        Name: " "
+                    }
+                ],
+                Subject: "Reset Password",
+                HTMLPart: `<!doctype html>
           <html>
               <head>
                   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -482,19 +481,17 @@ function resetSend(emailTo, link) {
               </body>
           </html>
           `
-  
-        }
-      ]
+            }
+        ]
+    });
+    request
+        .then((result) => {
+        console.log(result.body);
+        console.log(link);
     })
-  
-  request
-  .then((result) => {
-    console.log(result.body)
-    console.log(link)
-  })
-  .catch((err) => {
-    console.log(err.statusCode)
-  })
-  }
-
-module.exports = resetSend  
+        .catch((err) => {
+        console.log(err.statusCode);
+    });
+}
+exports.resetSend = resetSend;
+//# sourceMappingURL=resetSend.js.map

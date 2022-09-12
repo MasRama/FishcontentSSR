@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const User_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/User"));
 const Redis_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Addons/Redis"));
 const uuid_1 = require("uuid");
-const verifSend_1 = __importDefault(require("../../../resources/js/verifSend"));
+const verifSend_1 = require("../../Scripts/verifSend");
 class AuthController {
     async loginPage({ view, auth }) {
         if (auth.user) {
@@ -56,7 +56,7 @@ class AuthController {
         const uuid = (0, uuid_1.v4)();
         await Redis_1.default.setex(uuid, 86400, request.input('email'));
         let url = `${request.headers().host}/verify/${uuid}`;
-        (0, verifSend_1.default)(request.input('email'), url);
+        (0, verifSend_1.verifSend)(request.input('email'), url);
         return view.render('login', { success: 'Silahkan verifikasi email anda' });
     }
 }

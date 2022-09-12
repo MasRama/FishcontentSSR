@@ -7,7 +7,7 @@ const User_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/User"))
 const Redis_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Addons/Redis"));
 const uuid_1 = require("uuid");
 const Hash_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Hash"));
-const resetSend_1 = __importDefault(require("../../../resources/js/resetSend"));
+const resetSend_1 = require("../../Scripts/resetSend");
 class ResetsController {
     async index({ view }) {
         return view.render('forgot');
@@ -18,7 +18,7 @@ class ResetsController {
             const uuid = (0, uuid_1.v4)();
             await Redis_1.default.setex(uuid, 86400, userFind.email);
             let url = `${request.headers().host}/reset/${uuid}`;
-            (0, resetSend_1.default)(userFind.email, url);
+            (0, resetSend_1.resetSend)(userFind.email, url);
             return view.render('login', { success: 'Silahkan cek email anda untuk mendapatkan password baru' });
         }
         return view.render('forgot', { error: 'Email tidak ditemukan' });

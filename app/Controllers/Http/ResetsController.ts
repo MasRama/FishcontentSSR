@@ -3,7 +3,7 @@ import User from 'App/Models/User'
 import Redis from '@ioc:Adonis/Addons/Redis'
 import { v4 as uuidv4 } from 'uuid';
 import Hash from '@ioc:Adonis/Core/Hash'
-import resetSend from '../../../resources/js/resetSend'
+import {resetSend} from '../../Scripts/resetSend'
 
 export default class ResetsController {
   public async index({ view }: HttpContextContract) {

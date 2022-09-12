@@ -2,7 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import Redis from '@ioc:Adonis/Addons/Redis'
 import { v4 as uuidv4 } from 'uuid';
-import verifSend from '../../../resources/js/verifSend'
+import {verifSend} from '../../Scripts/verifSend'
 
 
 export default class AuthController {
