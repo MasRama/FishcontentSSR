@@ -5,8 +5,8 @@ const staticConfig = {
     dotFiles: 'ignore',
     etag: true,
     lastModified: true,
-    maxAge: 0,
-    immutable: false,
+    maxAge: '365d',
+    immutable: true,
 };
 exports.default = staticConfig;
 //# sourceMappingURL=static.js.map
