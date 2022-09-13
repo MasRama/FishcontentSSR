@@ -3,7 +3,7 @@ import User from 'App/Models/User'
 import Redis from '@ioc:Adonis/Addons/Redis'
 import { v4 as uuidv4 } from 'uuid';
 import Hash from '@ioc:Adonis/Core/Hash'
-import resetSend from '../../../resources/js/resetSend'
+import {resetSend} from '../../Scripts/resetSend'
 
 export default class ResetsController {
   public async index({ view }: HttpContextContract) {
@@ -26,7 +26,7 @@ export default class ResetsController {
   public async show({params, view}: HttpContextContract) {
     const uuidRedis = await Redis.get(params.id)
     if(!uuidRedis) {
-      return `Where do you go? :)`
+      return `<h4>Where do you go? :)</h4>`
     }
     return view.render('resetpw', {uuid: params.id})
   }
@@ -34,7 +34,7 @@ export default class ResetsController {
   public async newPass({ request, params, view }: HttpContextContract) {
     const uuidRedis = await Redis.get(params.id)
     if(!uuidRedis) {
-      return `Where do you go? :)`
+      return `<h4>Where do you go? :)</h4>`
     }
 
     const hashedPassword = await Hash.make(request.input('password'))

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FishContent Indonesia</title>
     @entryPointStyles('app')
 
+    <link rel="icon" type="image/png" href="../images/icon.webp">
     <script src="../js/login.js" defer></script>
 
 </head>
@@ -33,6 +34,8 @@
               @endif
 
             <form action="/reset" method="POST" class="w-full ">
+                {{ csrfField() }}
+                
                 <label class=" text-base font-semibold block mb-2 lg:mb-4" for="email">Email</label>
                 <input type="email" name="email" class="w-full h-10 sm:h-12 py-2 px-5 ring-1 mb-2 ring-gray-300 outline-1 focus:outline-orange-300 invalid:outline-red-500 focus:invalid:outline-red-500 rounded-md block placeholder:text-sm peer" id="email" placeholder="Masukan email anda" required>
                 <input type="submit" class="btn btn-secondary w-full mt-6 lg:mt-8" value="kirim">

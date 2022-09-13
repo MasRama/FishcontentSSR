@@ -12,3 +12,6 @@
 <li> type <code>node ace migration:run</code>
 <li> optional : run seeder with <code>node ace db:seed</code>
 <li> start with <code>npm run dev</code>
+
+<h2> For Production Level : </h2>
+<li> Please follow this link https://docs.adonisjs.com/guides/deployment

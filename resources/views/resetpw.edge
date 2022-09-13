@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FishContent Indonesia</title>
     @entryPointStyles('app')
+
+    <link rel="icon" type="image/png" href="../images/icon.webp">
 
 </head>
 
@@ -16,6 +18,7 @@
             <h1 class=" text-xl sm:text-2xl font-bold mb-3">Password Reset</h1>
             <p class="text-sm text-center sm:text-base mb-6 sm:mb-8">Masukkan password anda yang baru lalu ulangi</p>
             <form action="/reset/{{uuid}}" class="w-full" method="POST">
+                {{ csrfField() }}
                 <a href="/login" class="block mb-4 text-sm text-blue-500 font-semibold">Kembali untuk login</a>
                 <div class=" relative mb-4 md:mb-6 ">
                     <label for="password-in" class="text-sm text-gray-600 sm:text-base block lg:text-lg font-medium mb-1">Password baru</label>

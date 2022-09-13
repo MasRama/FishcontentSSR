@@ -4,7 +4,7 @@ const mailjet = Mailjet.apiConnect(
     'd4a33965e9a93e343405f83a9d90a6b2',
 );
 
-function resetSend(emailTo, link) {
+export function resetSend(emailTo, link) {
     const request = mailjet
     .post('send', { version: 'v3.1' })
     .request({
@@ -496,5 +496,3 @@ function resetSend(emailTo, link) {
     console.log(err.statusCode)
   })
   }
-
-module.exports = resetSend  
