@@ -18,26 +18,23 @@
 |
 */
 
-import Route from '@ioc:Adonis/Core/Route'
+import Route from "@ioc:Adonis/Core/Route";
 
-Route.get('/', 'PublicsController.home')
+Route.get("/", "PublicsController.home");
 
 Route.group(() => {
+  Route.get("/edukasi/page/:id", "PublicsController.edu");
+  Route.get("/sharing", "PublicsController.sharing");
+  Route.get("/dashboard", "PublicsController.dashboard");
+}).middleware("auth");
 
-    Route.get('/edukasi/page/:id', 'PublicsController.edu' )
-    Route.get('/sharing', 'PublicsController.sharing')
+Route.resource("verify", "VerifsController");
 
-}).middleware('auth')
+Route.resource("reset", "ResetsController");
 
-Route.resource('verify', 'VerifsController')
+Route.get("/login", "AuthController.loginPage");
+Route.get("/regis", "AuthController.regisPage");
 
-Route.resource('reset', 'ResetsController')
-
-Route.get('/login', 'AuthController.loginPage')
-Route.get('/regis', 'AuthController.regisPage')
-
-
-Route.post('/reset/:id', 'ResetsController.newPass')
-Route.post('/regis', 'AuthController.regis')
-Route.post('/login', 'AuthController.login')
-
+Route.post("/reset/:id", "ResetsController.newPass");
+Route.post("/regis", "AuthController.regis");
+Route.post("/login", "AuthController.login");
