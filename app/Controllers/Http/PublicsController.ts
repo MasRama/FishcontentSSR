@@ -53,7 +53,7 @@ const courses = [
   }
   
 ];
-const coursesPerPage = 5;
+const coursesPerPage = 6;
 
 export default class PublicsController {
   public async home({ view, auth }: HttpContextContract) {
@@ -65,15 +65,9 @@ export default class PublicsController {
 
   public async edu({ params,view }: HttpContextContract) {
       return view.render("edukasi", {
-        courses: courses.filter((v, i) => {
-          if (
-            i >= (params.id - 1) * coursesPerPage &&
-            i <= params.id * coursesPerPage
-          ) {
-            return v;
-          }
-        }),
-        pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill("")
+        courses: courses.slice((params.id-1)* coursesPerPage , params.id*coursesPerPage ),
+        pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
+        id: Number(params.id),
       });
   }
 
