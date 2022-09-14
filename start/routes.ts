@@ -24,8 +24,8 @@ Route.get('/', 'PublicsController.home')
 
 Route.group(() => {
 
-  Route.get('/edukasi', 'PublicsController.edu')
-  Route.get('/sharing', 'PublicsController.sharing')
+    Route.get('/edukasi/page/:id', 'PublicsController.edu' )
+    Route.get('/sharing', 'PublicsController.sharing')
 
 }).middleware('auth')
 
