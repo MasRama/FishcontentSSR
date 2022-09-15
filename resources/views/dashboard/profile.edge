@@ -1,125 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FishContent Indonesia</title>
-  @entryPointStyles('app')
-  @entryPointScripts('app')     
-        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishContent Indonesia</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+    <script src="./../js/dashboard.js" defer></script>
 </head>
 
 
 
-<body class="font-poppins bg-slate-100">
-        <header class="bg-slate-100">
+<body class="font-poppins bg-white  ">
+    
+    <aside class=" w-full shadow-md">
+        <nav class="container mx-auto py-4 flex lg:hidden justify-between ">
+            <a href="/" class="flex items-center gap-2 ">
+                <img src="./../images/icon.webp" alt="fishcontent" class="w-10 h-10 rounded-md">
+                <span class="text-base font-bold max-w-[10rem] leading-none">FishContent Indonesia</span>
+            </a>
+            <button class="sidebar__toggler"><svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg></button>
+        </nav>
+    </aside>
+    <div class=" lg:mt-0 w-full max-w-[1920px] mx-auto flex  ">
+        <!-- sidebar -->
+        @include('dashboard/sidebar')
+        <!-- end sidebar -->
 
-            @include('components/navbar')
+        <!-- konten profil/ dashboard awal klik mulai disini bang -->
+        <div class=" bg-white flex-1 relative z-0 flex  h-screen">
+            <main class="flex-1 profile relative z-0 overflow-y-auto focus:outline-none xl:order-last">
+                <article>
+                    <!-- Profile header -->
+                    <div>
+                        <div>
+                            <img class="h-44 sm:h-[14rem] w-full object-cover lg:h-[18rem] bg-login bg-cover" alt="">
+                        </div>
+                        <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+                                <div class="flex">
+                                    <img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                                        src="./../images/dashboard/client3.webp" alt="client 3">
+                                </div>
+                                <div
+                                    class="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+                                    <div class="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
+                                        <h1 class="text-2xl font-bold text-gray-900 truncate">M Ferrari Firmansyah</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1">
+                                <h1 class="text-2xl font-bold text-gray-900 truncate">M Ferrari Firmansyah</h1>
+                            </div>
+                        </div>
+                    </div>
 
-        </header>
-    <!-- sidebar -->
-    @include('dashboard/sidebar')
-    <!-- end sidebar -->
-      
-    <!-- konten profil/ dashboard awal klik mulai disini bang -->
-    <div class="flex-1 relative z-0 flex  min-h-screen">
-      <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
-        <article>
-          <!-- Profile header -->
-          <div>
-            <div>
-              <img class="h-32 w-full object-cover lg:h-48 bg-login bg-cover" alt="">
-            </div>
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
-                <div class="flex">
-                  <img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="images/dashboard/client3.webp" alt="client 3">
-                </div>
-                <div class="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
-                  <div class="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
-                    <h1 class="text-2xl font-bold text-gray-900 truncate">M Ferrari Firmansyah</h1>
-                  </div>
-                </div>
-              </div>
-              <div class="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1">
-                <h1 class="text-2xl font-bold text-gray-900 truncate">M Ferrari Firmansyah</h1>
-              </div>
-            </div>
-          </div>
+                    <!-- Tabs -->
+                    <div class="mt-6 sm:mt-2 2xl:mt-5">
+                        <div class="border-b border-gray-200">
+                            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                                    <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+                                    <a href="#"
+                                        class="border-yellow-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        aria-current="page"> Profile </a>
 
-          <!-- Tabs -->
-          <div class="mt-6 sm:mt-2 2xl:mt-5">
-            <div class="border-b border-gray-200">
-              <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                  <!-- Current: "border-pink-500 text-gray-900", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-                  <a href="#" class="border-yellow-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page"> Profile </a>
+                                    <a href="#"
+                                        class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                        Profil Toko
+                                        <span
+                                            class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Mitra</span>
+                                    </a>
 
-                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Profil Toko
-                    <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Mitra</span> </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
 
-              </nav>
-              </div>
-            </div>
-          </div>
+                    <!-- Description list -->
+                    <div class="mt-6 w-full mx-auto px-4 sm:px-6 lg:px-8">
+                        <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Username</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get username</dd>
+                            </div>
 
-          <!-- Description list -->
-          <div class="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Username</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get username</dd>
-              </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Nomor Telepon</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get nomor telepon</dd>
+                            </div>
 
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Nomor Telepon</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get nomor telepon</dd>
-              </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Tanggal Lahir</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get tanggal lahir</dd>
+                            </div>
 
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Tanggal Lahir</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get tanggal lahir</dd>
-              </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Email</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get Email</dd>
+                            </div>
 
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Email</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get Email</dd>
-              </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Jenis Kelamin</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get jenis kelamin</dd>
+                            </div>
 
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Jenis Kelamin</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get jenis kelamin</dd>
-              </div>
+                            <div class="sm:col-span-1">
+                                <dt class="text-sm font-medium text-gray-500">Alamat</dt>
+                                <dd class="mt-1 text-sm text-gray-900">*get alamat</dd>
+                            </div>
 
-              <div class="sm:col-span-1">
-                <dt class="text-sm font-medium text-gray-500">Alamat</dt>
-                <dd class="mt-1 text-sm text-gray-900">*get alamat</dd>
-              </div>
+                            <div class="sm:col-span-2">
+                                <dt class="text-sm font-medium text-gray-500">Tentang</dt>
+                                <dd class="mt-1 max-w-prose  space-y-5">
+                                    <p class="text-sm text-inherit font-normal text-gray-900">Lorem, ipsum dolor sit
+                                        amet
+                                        consectetur adipisicing elit. Dignissimos error tenetur harum laborum repellat.
+                                        Vitae quibusdam atque explicabo, obcaecati debitis magni? Quo ducimus sunt
+                                        corporis
+                                        modi nisi, quod est laborum saepe maiores obcaecati deserunt rem perferendis
+                                        numquam
+                                        ab pariatur debitis odio dignissimos nihil aliquid reprehenderit voluptas at
+                                        tempora
+                                        error necessitatibus. Nesciunt, deserunt tempora laborum omnis commodi error
+                                        voluptate dolore earum praesentium. Inventore dolorem consectetur libero
+                                        laudantium
+                                        veniam adipisci iure molestiae fugiat quo ipsam explicabo natus, temporibus
+                                        culpa
+                                        accusamus nulla magnam exercitationem sequi officiis, laboriosam placeat
+                                        voluptates,
+                                        assumenda molestias laborum possimus. Eos quidem, officia mollitia sed
+                                        voluptatum
+                                        tenetur. Necessitatibus, quasi. Quisquam!.</p>
+                                    <p class="text-sm text-inherit font-normal text-gray-900">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Modi illum accusamus eligendi incidunt, fugit odit
+                                        mollitia. Culpa placeat beatae nesciunt corporis at dolorum magni quaerat
+                                        reiciendis
+                                        blanditiis? Id excepturi quo modi. Neque commodi iure porro velit, sapiente,
+                                        maxime
+                                        amet in culpa voluptatibus tempora repellendus dolor officia blanditiis aliquid
+                                        repellat assumenda, cum nostrum rerum iusto enim necessitatibus! Mollitia ad
+                                        dolorem
+                                        odit non facilis laboriosam ipsum deleniti impedit! Temporibus quo aut hic
+                                        voluptas
+                                        odit dolore in dolor expedita corporis quam, qui, doloribus ab provident, iure
+                                        id
+                                        deleniti laboriosam nesciunt quod! Soluta quam ullam maiores sint expedita
+                                        aspernatur quisquam eos voluptatem corporis magnam.</p>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+            </main>
+        </div>
 
-              <div class="sm:col-span-2">
-                <dt class="text-sm font-medium text-gray-500">Tentang</dt>
-                <dd class="mt-1 max-w-prose  space-y-5">
-                  <p class="text-sm text-inherit font-normal text-gray-900">Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.</p>
-                  <p class="text-sm text-inherit font-normal text-gray-900">Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra. Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum risus suspendisse.</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </article>
-      </main>
+
     </div>
 
-        <!-- dan dashbord/profil berakhir disini -->
-        <footer>
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-             
+
+    <footer>
+        <div
+            class="container mx-auto mt-0 lg:mt-16 flex flex-col gap-12 py-16  text-center md:flex-row md:gap-18 lg:gap-24 lg:flex-row">
+            <div class="basis-1/4 md:text-left">
+                <a class="flex items-center gap-4 mb-7 justify-center lg:justify-start " href="/">
+                    <img src="./../images/icon.webp" alt="logo" class="w-[3rem] h-auto rounded-md" />
+                    <span class="text-xl capitalize font-bold">fishcontent indonesia</span>
+                </a>
+                <p class="text-base lg:text-lg leading-relaxed ">
+                    Rt.17 Rw.06 Desa Kasri Kec.Bululawang Kab.Malang Malang Jawa timur Indonesia 65166.
             </div>
-          </footer>
+            <div
+                class="basis-3/4 grid grid-cols-1 gap-y-12 text-center justify-center lg:text-left lg:grid-cols-2 xl:grid-cols-3 ">
+                <div>
+                    <h4 class="mb-6">Pelayanan</h4>
+                    <ul class="flex flex-col gap-2">
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Edukasi perikanan</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Edukasi Aquatik</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Marketplace aquatik</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Mitra Marketplace</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Komunitas Perikanan</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Komunitas Aquatik</a></li>
+                        <li><a href="/" class="link text-[.9rem] sm:text-base">Pakar ahli perikanan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-6">Kontak</h4>
+                    <ul class="flex flex-col gap-2">
+                        <li class="text-[.9rem] sm:text-base">fishcontent.idn@gmail.com </li>
+                        <li class="text-[.9rem] sm:text-base">M. Ferrari Firmansyah </li>
+                        <li class="text-[.9rem] sm:text-base">085155441510 </li>
+                        <li class="text-[.9rem] sm:text-base">@fishcontent.id</li>
+    
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-6">Ikuti kami</h4>
+                    <ul class="flex gap-2 justify-center lg:justify-start ">
+                        <li><a href="/"
+                                class="flex items-center justify-center w-12 h-12 rounded-full  bg-slate-200 hover:bg-black group duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:fill-white"
+                                    viewBox="0 0 320 512">
+                                    <path
+                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                                </svg></a></li>
+                        <li><a href="/"
+                                class="flex items-center justify-center w-12 h-12 rounded-full  bg-slate-200 hover:bg-black group duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:fill-white"
+                                    viewBox="0 0 512 512">
+                                    <path
+                                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                                </svg></a></li>
+                        <li><a href="/"
+                                class="flex items-center justify-center w-12 h-12 rounded-full  bg-slate-200 hover:bg-black group duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:fill-white"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+                                </svg></a></li>
+                        <li><a href="/"
+                                class="flex items-center justify-center w-12 h-12 rounded-full  bg-slate-200 hover:bg-black group duration-300"><svg
+                                    xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:fill-white"
+                                    viewBox="0 0 448 512">
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+    
+    
+            </div>
+    
         </div>
-        
-      
-              @include('components/footer')
-      
-      </body>
-      </html>
-      
+        <div class="bg-gray-200 p-6 text-center leading-relaxed ">
+            <p class="text-xs lg:text-sm ">Copyright © 2021 All Rights Reserved By Fishcontent Indonesia </p>
+        </div>
+    </footer>
+    
+
+</body>
+
+</html>
