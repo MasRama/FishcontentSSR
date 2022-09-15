@@ -33,6 +33,16 @@
                 <p class="text-lg hidden lg:block font-medium opacity-100">Sudah memiliki akun ?, login <a class="text-blue-700" href="/login   "> disini!</a></p>
             </div>
             <div class="basis-[45%] ">
+
+                @if(error)
+                @!component('components/toast', {
+                    color : 'red',
+                    src : 'https://img.icons8.com/windows/50/minus.png',
+                    title : 'Error',
+                    msg: error
+                  })
+                @endif
+
                 <form action="/regis" method="POST" class="width-full">
                     {{ csrfField() }}
                     <div class="flex flex-col sm:flex-row   gap-2 lg:gap-8">
