@@ -11,6 +11,12 @@ export default class User extends BaseModel {
 
   @column()
   public telp: string
+  
+  @column()
+  public username: string
+
+  @column()
+  public gender: string
 
   @column()
   public alamat: string
