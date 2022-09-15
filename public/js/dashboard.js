@@ -1,6 +1,15 @@
 const sidebar = document.querySelector('.sidebar');
 const sidebarToggler = document.querySelector('.sidebar__toggler');
-console.log("udin");
+const overlay = document.querySelector('.overlay');
+
+const openSdbar = () => {
+    sidebar.classList.toggle('translate-x-0');
+    sidebar.previousElementSibling.classList.toggle('hidden')
+}
 sidebarToggler.onclick = () => {
-    console.log('ss')
+    openSdbar();
+}
+
+overlay.onclick = () => {
+    openSdbar();
 }
