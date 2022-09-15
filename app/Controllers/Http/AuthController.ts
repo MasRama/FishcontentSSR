@@ -59,13 +59,21 @@ export default class AuthController {
      return splitStr?.join(' '); 
     }
 
+    const usernameFind = await User.findBy('username', request.input('username').toLowerCase())
+
+    if(usernameFind) {
+      return 'gboleee'
+    }
+
     let alamat = titleCase(`${request.input('detail')}, Kec ${kec}, ${kab}, ${prov}, ${request.input('kd_pos')}`) 
 
     await User.create({
       nama: request.input('nama'),
       telp: request.input('telp'),
+      username: request.input('username').toLowerCase(),
+      gender: request.input('gender'),
       alamat: alamat,
-      email: request.input('email'),
+      email: request.input('email').toLowerCase(),
       password: request.input('password')
      })
 

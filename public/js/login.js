@@ -60,12 +60,11 @@ function closeToast() {
      parent.onanimationend = () => parent.classList.add('hidden')
 }
 
-/*
+
 function openToast() {
     let parent = document.querySelector('.toast-toggler').parentElement;
     parent.classList.remove('animate-fade-reverse');
     parent.classList.remove('hidden')
-    parent.classList.add('flex')
     parent.classList.add('animate-fade');
-} */
+} 
 
