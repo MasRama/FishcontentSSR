@@ -23,9 +23,10 @@ import Route from "@ioc:Adonis/Core/Route";
 Route.get("/", "PublicsController.home");
 
 Route.group(() => {
-  Route.get("/edukasi/page/:id", "PublicsController.edu");
-  Route.get("/sharing", "PublicsController.sharing");
-  Route.get("/dashboard", "PublicsController.dashboard");
+    Route.get("/edukasi/page/:id", "PublicsController.edu");
+    Route.get("/sharing", "PublicsController.sharing");
+    Route.get("/dashboard/profile", "PublicsController.dashboard");
+  
 }).middleware("auth");
 
 Route.resource("verify", "VerifsController");
