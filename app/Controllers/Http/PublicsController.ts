@@ -1,55 +1,48 @@
 import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
-
+import Edu from 'App/Models/Edu'
 
 const courses = [
-  {
+  { 
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   },
   {
     "title": "Cara berternak ikan cupang",
     "desc": "Disini kamu akan belajar cara membudidayakan ikan cupang secara lengkap. Materi disajikan melalui vidio dan juga E-Book pembelajaran. Kamu juga bisa belajar secara syncronous dengan menghubungi tentor yang tersedia.",
     "img": "./../../images/edukasi/ed1.webp",
     "link": "/",
-    "alt": "cupang",
   }
   
 ];
@@ -72,6 +65,7 @@ export default class PublicsController {
   }
 
   public async sharing({ view }: HttpContextContract) {
+    return JSON.stringify(await Edu.all(), null, 4) 
     return view.render("sharing");
   }
 
