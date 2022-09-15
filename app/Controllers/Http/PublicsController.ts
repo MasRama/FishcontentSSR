@@ -80,7 +80,7 @@ export default class PublicsController {
   }
 
   public async dashboard({ view }: HttpContextContract) {
-    return view.render("dashboard");
+    return view.render("dashboard/profile");
   }
 
   public async show({}: HttpContextContract) {}
