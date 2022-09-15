@@ -31,6 +31,35 @@
     font-display: swap;
 }
 
+
+.bg-red-300{
+    background: rgb(255, 137, 137);
+}
+.bg-green-300{
+    background: rgb(168, 255, 168);
+}
+.animate-fade-reverse{
+    animation: fade .5s reverse ease-out;
+}
+.nav__links--active{
+    @apply flex  animate-slidetobottom;
+}
+.toast{
+    @apply  hidden p-5 bg-red-300 gap-4 rounded-xl items-center mb-6 justify-between ;
+}
+.toast--expanded{   
+    @apply flex animate-fade;
+}
+   
+
+.input{
+    @apply w-full border outline-none border-gray-300 focus:border-indigo-700 focus:ring-indigo-500 text-base py-2 px-5 rounded-lg shadow-sm transition duration-200;
+}
+
+.input--invalid{
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500 ;
+}
+
 @layer components{
     .container{
         @apply w-11/12 lg:max-w-[1440px] ;
@@ -71,21 +100,4 @@
     }
 }
 
-.nav__links--active{
-    @apply flex  animate-slidetobottom;
-}
-.toast{
-    @apply  hidden p-5 bg-red-300 gap-4 rounded-xl items-center mb-6 justify-between ;
-}
-.toast--expanded{   
-    @apply flex animate-fade;
-}
-   
 
-.input{
-    @apply w-full border outline-none border-gray-300 focus:border-indigo-700 focus:ring-indigo-500 text-base py-2 px-5 rounded-lg shadow-sm transition duration-200;
-}
-
-.input--invalid{
-    @apply border-red-500 focus:border-red-500 focus:ring-red-500 ;
-}
