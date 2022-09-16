@@ -56,17 +56,18 @@ export default class PublicsController {
     return view.render("home", { isLogin: "no" });
   }
 
-  public async edu({ params,view }: HttpContextContract) {
-      return view.render("edukasi", {
-        courses: courses.slice((params.id-1)* coursesPerPage , params.id*coursesPerPage ),
-        pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
-        id: Number(params.id),
-      });
+    public async edu({ params, view }: HttpContextContract) {
+        const courses = await Edu.all();
+        return view.render("edukasi", {
+            courses: courses.slice((params.id - 1 ) * coursesPerPage , coursesPerPage * params.id ) ,
+            pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
+            id: Number(params.id),
+        });
   }
 
   public async sharing({ view }: HttpContextContract) {
-    return JSON.stringify(await Edu.all(), null, 4) 
-    return view.render("sharing");
+      return view.render('sharing');
+    
   }
 
   public async dashboard({ view }: HttpContextContract) {

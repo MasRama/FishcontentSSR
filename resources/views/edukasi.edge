@@ -157,13 +157,16 @@
                         <div class="w-full my-16 gap-6 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3">
                             <!-- baris 1 -->
                             @each(course in courses)
-                            @!component('components/course',{
-                            ...course
-                            })
+                                @!component('components/course',{
+                                    title : course.title ,
+                                    img: course.img,
+                                    link : course.link,
+                                    desc : course.desc
+                                })
                             @end
 
                         </div>
-                        <!-- pagination -->
+                        <!-- pagination --> 
                         <div class="border-t bg-white border-gray-200 px-4 flex items-center justify-between ">
                             <div class="-mt-px w-0 flex-1 flex">
                                 <a href={{`/edukasi/page/${id > 1 ? id-1 :id}`}}
