@@ -7,9 +7,6 @@
     <title>FishContent Indonesia</title>
     @entryPointStyles('app')
     <link rel="icon" type="image/png" href="../../images/icon.webp">
-    <script src="./../../js/swiper-bundle.js" defer></script>
-    <script src="./../../js/navbar.js" defer></script>
-    <script src="./../../js/flowbiteCdn.js" defer></script>
 </head>
 
 <body class="font-poppins bg-gray-100">
@@ -18,6 +15,7 @@
         @!component('components/navbar',{
             icon : "./../../images/icon.webp"
         })
+
     </header>
 
 
@@ -130,6 +128,7 @@
                     <section>
                         <div class="w-full my-16 gap-6 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3">
                             <!-- baris 1 -->
+                            @if(courses)
                             @each(course in courses)
                                 @!component('components/course',{
                                     title : course.title ,
@@ -137,7 +136,8 @@
                                     link : course.link,
                                     desc : course.desc
                                 })
-                            @end
+                            @endeach
+                            @endif
 
                         </div>
                         <!-- pagination --> 
