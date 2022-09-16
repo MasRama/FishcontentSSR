@@ -1,5 +1,5 @@
 import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
-import Edu from 'App/Models/Edu'
+import Edu from 'App/Models/Edu';
 
 
 
@@ -12,14 +12,16 @@ export default class PublicsController {
     return view.render("home", { isLogin: "no" });
   }
 
-    public async edu({ params, view }: HttpContextContract) {
+    public async edu({ request , view }: HttpContextContract) {
         const coursesPerPage = 6;
         const courses = await Edu.all();
+        const param = request.qs();
         return view.render("edukasi", {
-            courses: courses.slice((params.id - 1 ) * coursesPerPage , coursesPerPage * params.id ) ,
+            courses: courses.slice((param.page - 1 ) * coursesPerPage , coursesPerPage * param.page ) ,
             pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
-            id: Number(params.id),
+            id: Number(param.page),
         });
+
   }
 
   public async sharing({ view }: HttpContextContract) {
