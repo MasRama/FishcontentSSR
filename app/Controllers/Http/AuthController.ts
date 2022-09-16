@@ -60,9 +60,18 @@ export default class AuthController {
     }
 
     const usernameFind = await User.findBy('username', request.input('username').toLowerCase())
+    const emailFind = await User.findBy('email', request.input('email').toLowerCase())
+
+    if(request.input('username').length < 3) {
+      return view.render('regis', {error: 'Username harus diatas 3 huruf!'})
+    }
 
     if(usernameFind) {
-      return 'gboleee'
+      return view.render('regis', {error: 'Username telah digunakan'})
+    }
+
+    if(emailFind) {
+      return view.render('regis', {error: 'Email telah digunakan'})
     }
 
     let alamat = titleCase(`${request.input('detail')}, Kec ${kec}, ${kab}, ${prov}, ${request.input('kd_pos')}`) 
