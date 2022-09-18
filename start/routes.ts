@@ -42,9 +42,7 @@ Route.get("/login/adm00", async ({ view }) => {
 });
 
 
-
-
-
 Route.post("/reset/:id", "ResetsController.newPass");
 Route.post("/regis", "AuthController.regis");
+Route.post("/logout", "AuthController.logout");
 Route.post("/login", "AuthController.login");

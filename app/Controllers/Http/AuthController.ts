@@ -25,6 +25,12 @@ export default class AuthController {
     return view.render('regis')
   }
 
+  public async logout({ response, auth }: HttpContextContract) {
+
+    await auth.use('web').logout()
+    response.redirect('/')
+
+  }
 
   public async login({ auth, request, view }: HttpContextContract) {
     const email = request.input('email')
