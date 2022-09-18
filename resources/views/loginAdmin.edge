@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishContent Indonesia</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+
+    <link rel="icon" type="image/png" href="../images/icon.webp">
+    <script src="../js/login.js" defer></script>
+
+</head>
+
+<body class=" bg-login bg-cover min-h-screen  font-poppins  ">
+    <header class="">
+        <nav class="">
+            <div class="container relative flex justify-between lg:justify-end mx-auto py-6 ">
+                <a class="flex items-center gap-4 " href="/">
+                    <img src="../images/icon.webp" alt="logo" class="w-[3rem] h-[3rem] rounded-md" />
+                    <span
+                        class="text-base text-black max-w-[7rem] md:text-lg md:max-w-max lg:text-2xl uppercase font-bold ">fishcontent
+                        indonesia</span>
+                </a>
+            </div>
+        </nav>
+
+    </header>
+    <main class="w-full min-h-[90vh] flex items-center  justify-center">
+        <div
+            class="w-11/12  max-w-lg lg:max-w-screen-2xl flex flex-col gap-6 lg:gap-0 mx-auto justify-center lg:flex-row lg:justify-between  ">
+            <div class="basis-2/5 lg:-mt-[4%]">
+                <h2
+                    class="text-center text-2xl mb-5 leading-normal lg:text-left lg:text-3xl xl:text-4xl xl:leading-[1.6] lg:leading-[1.6] ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quae aspernatur voluptatum sed! </h2>
+                
+            </div>
+            <div class="basis-96 ">
+
+                @if(error || success)
+                @!component('components/toast', {
+                color : error ? 'red' : 'green',
+                src : error ? 'https://img.icons8.com/windows/50/minus.png' :
+                'https://img.icons8.com/external-regular-kawalan-studio/344/external-comment-verify-chat-regular-kawalan-studio-5.png',
+                title : error ? 'Error' : 'Berhasil',
+                msg: error ? error : success
+                })
+                @endif
+
+
+                <form action="/login" class="flex flex-col" method="POST">
+                    {{ csrfField() }}
+                    <div class="relative mb-12">
+                        <label for="email-in" class="text-base block lg:text-lg font-medium mb-1">Masukkan Email</label>
+                        <input type="email" name="email" class="input">
+                        <small class="mt-2 text-red-600 hidden validate"></small>
+                    </div>
+                    
+                    <input type="submit" value="Login" class="btn btn-third w-full">
+                
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
