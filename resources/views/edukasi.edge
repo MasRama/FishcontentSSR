@@ -43,62 +43,25 @@
                         </div>
                         <div
                             class="border-t border-gray-200 grid grid-cols-1 divide-y divide-gray-200  md:grid-cols-3 justify-center sm:divide-y-1 sm:divide-x">
-                            <div class="px-6 py-5 text-sm font-medium text-center">
-
-                                <div>
-                                    <label id="listbox-label" class="block text-sm font-medium text-gray-700"></label>
-                                    <div class="mt-1 relative">
-                                        <button type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                                            aria-haspopup="listbox" aria-expanded="true"
-                                            aria-labelledby="listbox-label">
-                                            <div class="flex items-center">
-                                                <span class="ml-3 block truncate"> Jenis </span>
-                                            </div>
-                                            <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                                <!-- Heroicon name: solid/selector -->
-                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="px-6 py-5 text-sm font-medium text-center"> 
+                                <select name="" id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
+                                    <option value="Jenis" class="" selected disabled>Jenis</option>
+                                    <option value="cupang">cupang</option>
+                                </select>
                             </div>
 
                             <div class="px-6 py-5 text-sm font-medium text-center">
-                                <div>
-                                    <label id="listbox-label" class="block text-sm font-medium text-gray-700"></label>
-                                    <div class="mt-1 relative">
-                                        <button type="button"
-                                            class="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                                            aria-haspopup="listbox" aria-expanded="true"
-                                            aria-labelledby="listbox-label">
-                                            <div class="flex items-center">
-                                                <span class="ml-3 block truncate"> Kategori </span>
-                                            </div>
-                                            <span
-                                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                                <!-- Heroicon name: solid/selector -->
-                                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path fill-rule="evenodd"
-                                                        d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd" />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
+                                <select name="" id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
+                                    <option value=""  selected disabled>Kategori</option>
+                                    <option value="sulit">Sulit</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="mudah">Mudah</option>
+                                </select>
                             </div>
 
                             <div class="px-6 py-5 text-sm font-medium text-center">
-                                <div class="max-w-xs mx-auto w-full lg:max-w-md">
-                                    <div class="px-12 lg:px-0">
+                                <div class="max-w-xs mx-auto w-full mt-1 lg:max-w-md">
+                                    <div class="px-8 sm:px-0">
                                         <!-- Search -->
                                         <div class="max-w-xs mx-auto w-full lg:max-w-md">
                                             <label for="search" class="sr-only">Search</label>
@@ -157,8 +120,15 @@
                             </div>
                             <div class="hidden md:-mt-px md:flex">
                                 @each((v, i) in pagination)
-                                <a  class={{{` "text-gray-500 hover:text-gray-700  border-t-2 hover:border-gray-300  py-4 px-4 inline-flex items-center text-sm font-medium"`}}} href={{`/edukasi/?page=${i+1}`}}>
+                                @if(id === i + 1)
+                                  <a class={{{` "text-gray-500 border-indigo-600 hover:text-gray-700  border-t-2 hover:border-gray-300  py-4 px-4 inline-flex items-center text-sm font-medium"
+                                    `}}} href={{`/edukasi/?page=${i+1}`}}>
                                     {{i+1}}</a>
+                                @else
+                                    <a class={{{` "text-gray-500 hover:text-gray-700  border-t-2 hover:border-gray-300  py-4 px-4 inline-flex items-center text-sm font-medium"
+                                        `}}} href={{`/edukasi/?page=${i+1}`}}>
+                                        {{i+1}}</a>
+                                @end
                                 @end
 
 
