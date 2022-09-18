@@ -20,12 +20,14 @@
 
 import Route from "@ioc:Adonis/Core/Route";
 
+
 Route.get("/", "PublicsController.home");
 
 Route.group(() => {
     Route.get("/edukasi", "PublicsController.edu");
     Route.get("/sharing", "PublicsController.sharing");
     Route.get("/dashboard/profile", "PublicsController.dashboard");
+    Route.get("/edukasi/adm00", "PublicsController.eduadm");
   
 }).middleware("auth");
 
@@ -35,6 +37,13 @@ Route.resource("reset", "ResetsController");
 
 Route.get("/login", "AuthController.loginPage");
 Route.get("/regis", "AuthController.regisPage");
+Route.get("/login/adm00", async ({ view }) => {
+    return view.render('loginAdmin');
+});
+
+
+
+
 
 Route.post("/reset/:id", "ResetsController.newPass");
 Route.post("/regis", "AuthController.regis");
