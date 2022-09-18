@@ -12,22 +12,40 @@ export default class PublicsController {
     return view.render("home", { isLogin: "no" });
   }
 
-    public async edu({ request , view }: HttpContextContract) {
-        const coursesPerPage = 6;
-        const courses = await Edu.all();
-        const param = request.qs();
-    
-        return view.render("edukasi", {
-            courses: courses.slice((param.page - 1 ) * coursesPerPage , coursesPerPage * param.page ) ,
-            pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
-            id: Number(param.page),
-        });
+  public async edu({ request, view }: HttpContextContract) {
+    const coursesPerPage = 6;
+    const courses = await Edu.all();
+    const param = request.qs();
 
+    return view.render("edukasi", {
+      courses: courses.slice(
+        (param.page - 1) * coursesPerPage,
+        coursesPerPage * param.page
+      ),
+      pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
+      id: Number(param.page),
+    });
+  }
+  public async eduadm({ request, view }: HttpContextContract) {
+    const coursesPerPage = 6;
+        const courses = await Edu.all();
+        const d = [...courses, {isAdd : true , link : "/"}]
+        const param = request.qs();
+
+    return view.render("edukasiadm", {
+      courses: d.slice(
+        (param.page - 1) * coursesPerPage,
+        coursesPerPage * param.page
+      ),
+      pagination: Array(Math.ceil(d.length / coursesPerPage)).fill(""),
+      id: Number(param.page),
+      isAdmin: true,
+        
+    });
   }
 
   public async sharing({ view }: HttpContextContract) {
-      return view.render('sharing');
-    
+    return view.render("sharing");
   }
 
   public async dashboard({ view }: HttpContextContract) {
