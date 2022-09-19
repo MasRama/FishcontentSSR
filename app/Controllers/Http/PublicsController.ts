@@ -17,6 +17,18 @@ export default class PublicsController {
     const courses = await Edu.all();
     const param = request.qs();
 
+    if(param.jenis) {
+      const findJenis = await Edu.query().where('jenis', param.jenis)
+      return view.render("edukasi", {
+        courses: findJenis.slice(
+          (param.page - 1) * coursesPerPage,
+          coursesPerPage * param.page
+        ),
+        pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
+        id: Number(param.page),
+      });
+    }
+
     return view.render("edukasi", {
       courses: courses.slice(
         (param.page - 1) * coursesPerPage,

@@ -6,16 +6,20 @@ export default class extends BaseSeeder {
     await Edu.createMany([
 
       {
-        title: 'Demo Title 1',
+        title: 'Demo Cupang',
         desc: 'Demo desc 1',
         img: './../../images/edukasi/ed1.webp',
-        link: '/'
+        link: '/',
+        jenis: 'cupang',
+        cat: 'normal'
       },
       {
-        title: 'Demo Title 2',
+        title: 'Demo Arwana',
         desc: 'Demo desc 2',
         img: './../../images/edukasi/ed1.webp',
-        link: '/' 
+        link: '/', 
+        jenis: 'arwana',
+        cat: 'mudah'
       }
     
     ])

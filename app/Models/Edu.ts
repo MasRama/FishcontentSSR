@@ -17,6 +17,12 @@ export default class Edu extends BaseModel {
   @column()
   public link: string
 
+  @column()
+  public jenis: string
+
+  @column()
+  public cat: string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
