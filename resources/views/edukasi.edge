@@ -44,7 +44,7 @@
                         <div
                             class="border-t border-gray-200 grid grid-cols-1 divide-y divide-gray-200  md:grid-cols-3 justify-center sm:divide-y-1 sm:divide-x">
                             <div class="px-6 py-5 text-sm font-medium text-center"> 
-                                <select name="" onchange="location = `${location.toString()}${this.value ? '&jenis='+this.value : ''}`" id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
+                                <select name="" onchange="location = `${location.pathname + location.search.slice(0,7)}${this.value ? '&jenis='+this.value : ''} `;"  id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
                                     <option value="Jenis" class="" selected disabled>Jenis</option>
                                     <option value="">Semua</option>
                                     <option value="cupang">Cupang</option>
