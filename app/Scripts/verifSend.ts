@@ -1,7 +1,7 @@
 const Mailjet = require('node-mailjet');
 const mailjet = Mailjet.apiConnect(
-    '6a3d5e8f499ff38748c598edd59b063d',
-    'd4a33965e9a93e343405f83a9d90a6b2',
+    process.env.MAILJET_PUBLIC,
+    process.env.MAILJET_PRIVATE,
 );
 
 export function verifSend(emailTo, link) {
