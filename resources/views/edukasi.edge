@@ -7,6 +7,7 @@
     <title>FishContent Indonesia</title>
     @entryPointStyles('app')
     <link rel="icon" type="image/png" href="../../images/icon.webp">
+    <script src="../js/edukasi.js" defer></script>
 </head>
 
 <body class="font-poppins bg-gray-100">
@@ -45,7 +46,11 @@
                             class="border-t border-gray-200 grid grid-cols-1 divide-y divide-gray-200  md:grid-cols-3 justify-center sm:divide-y-1 sm:divide-x">
                             <div class="px-6 py-5 text-sm font-medium text-center"> 
                                 <select name="" onchange="location = `${location.pathname + location.search.slice(0,7)}${this.value ? '&jenis='+this.value : ''} `;"  id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
-                                    <option value="Jenis" class="" selected disabled>Jenis</option>
+                                   @if(jenis)
+                                   <option value="Jenis" class="" selected disabled>{{ jenis }}</option>
+                                   @else 
+                                   <option value="Jenis" class="" selected disabled>Jenis</option>
+                                   @endif 
                                     <option value="">Semua</option>
                                     <option value="cupang">Cupang</option>
                                     <option value="arwana">Arwana</option>
@@ -53,8 +58,12 @@
                             </div>
 
                             <div class="px-6 py-5 text-sm font-medium text-center">
-                                <select name="" id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
-                                    <option value=""  selected disabled>Kategori</option>
+                                <select name="" onchange="location = `${containsAny(location.href, arrCat) ? location.search.slice(0, -total) : location.search}${this.value ? '&cat='+this.value : ''} `;" id="" class="w-full  mt-1 border border-gray-300 rounded-md py-2 px-3 shadow-sm text-base font-medium">
+                                    @if(cat)
+                                   <option value="" class="" selected disabled>{{ cat }}</option>
+                                   @else 
+                                   <option value=""  selected disabled>Kategori</option>
+                                   @endif 
                                     <option value="sulit">Sulit</option>
                                     <option value="normal">Normal</option>
                                     <option value="mudah">Mudah</option>

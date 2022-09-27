@@ -17,8 +17,16 @@ export default class PublicsController {
     const courses = await Edu.all();
     const param = request.qs();
 
+    function capitalize(word) {
+      const lower = word.toLowerCase();
+      return word.charAt(0).toUpperCase() + lower.slice(1);
+    }
+
     if(param.jenis) {
-      const findJenis = await Edu.query().where('jenis', param.jenis)
+      let findJenis = await Edu.query().where('jenis', param.jenis)
+      if(param.cat) {
+        findJenis = await Edu.query().where('jenis', param.jenis).where('cat', param.cat)
+      }
       return view.render("edukasi", {
         courses: findJenis.slice(
           (param.page - 1) * coursesPerPage,
@@ -26,6 +34,21 @@ export default class PublicsController {
         ),
         pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
         id: Number(param.page),
+        jenis: capitalize(param.jenis),
+        cat: capitalize(param.cat) || null
+      });
+    }
+
+    if(param.cat) {
+      const findCat = await Edu.query().where('cat', param.cat)
+      return view.render("edukasi", {
+        courses: findCat.slice(
+          (param.page - 1) * coursesPerPage,
+          coursesPerPage * param.page
+        ),
+        pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
+        id: Number(param.page),
+        cat: capitalize(param.cat)
       });
     }
 

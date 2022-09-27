@@ -7,7 +7,7 @@ export default class extends BaseSeeder {
 
       {
         title: 'Demo Cupang',
-        desc: 'Demo desc 1',
+        desc: 'Demo Cupang Normal',
         img: './../../images/edukasi/ed1.webp',
         link: '/',
         jenis: 'cupang',
@@ -15,7 +15,15 @@ export default class extends BaseSeeder {
       },
       {
         title: 'Demo Arwana',
-        desc: 'Demo desc 2',
+        desc: 'Demo Arwana Mudah',
+        img: './../../images/edukasi/ed1.webp',
+        link: '/', 
+        jenis: 'arwana',
+        cat: 'mudah'
+      },
+      {
+        title: 'Demo Arwana',
+        desc: 'Demo Arwana Sulit',
         img: './../../images/edukasi/ed1.webp',
         link: '/', 
         jenis: 'arwana',
