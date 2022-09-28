@@ -2,9 +2,8 @@ import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import Edu from 'App/Models/Edu';
 
 
-
-
 export default class PublicsController {
+  
   public async home({ view, auth }: HttpContextContract) {
     if (auth.user) {
       return view.render("home");
@@ -83,8 +82,16 @@ export default class PublicsController {
     return view.render("sharing");
   }
 
-  public async dashboard({ view }: HttpContextContract) {
-    return view.render("dashboard/profile");
+  public async dashboard({ view, auth }: HttpContextContract) {
+    console.log(auth.user?.$attributes.nama)
+    return view.render("dashboard/profile", {
+      username: auth.user?.$attributes.username,
+      nama: auth.user?.$attributes.nama,
+      gender: auth.user?.$attributes.gender,
+      telp: auth.user?.$attributes.telp,
+      email: auth.user?.$attributes.email,
+      alamat: auth.user?.$attributes.alamat
+    });
   }
 
   public async show({}: HttpContextContract) {}
