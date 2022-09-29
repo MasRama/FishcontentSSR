@@ -3,6 +3,7 @@
 <h2> Requirement : </h2>
 <li> Redis
 <li> NodeJs v14 or higher
+<li> Mailjet account 
 
 <h2> Installation : </h2>
 <li> Clone this project
