@@ -8,6 +8,7 @@ export default class extends BaseSeeder {
       telp: '0811111',
       username: 'demoacc',
       gender: 'laki-laki',
+      tgl_lahir: '2022-10-16',
       alamat: 'Jl. Demo, Kec Demo, Kabupaten Demo, Demo',
       email: 'demo@gmail.com',
       password: 'demo',
