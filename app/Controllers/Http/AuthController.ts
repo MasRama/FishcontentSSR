@@ -88,6 +88,7 @@ export default class AuthController {
       username: request.input('username').toLowerCase(),
       gender: request.input('gender'),
       alamat: alamat,
+      tgl_lahir: request.input('tgl_lahir'),
       email: request.input('email').toLowerCase(),
       password: request.input('password')
      })

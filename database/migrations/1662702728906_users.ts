@@ -12,6 +12,7 @@ export default class UsersSchema extends BaseSchema {
       table.string('username', 255).notNullable()
       table.string('gender', 255).notNullable()
       table.string('alamat', 255).notNullable()
+      table.string('tgl_lahir', 255).notNullable()
       table.string('email', 255).notNullable()
       table.string('password', 180).notNullable()
       table.boolean('is_verified').defaultTo(false)

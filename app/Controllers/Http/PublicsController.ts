@@ -88,6 +88,7 @@ export default class PublicsController {
       username: auth.user?.$attributes.username,
       nama: auth.user?.$attributes.nama,
       gender: auth.user?.$attributes.gender,
+      tgl_lahir: auth.user?.$attributes.tgl_lahir,
       telp: auth.user?.$attributes.telp,
       email: auth.user?.$attributes.email,
       alamat: auth.user?.$attributes.alamat

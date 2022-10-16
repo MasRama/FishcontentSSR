@@ -22,6 +22,9 @@ export default class User extends BaseModel {
   public alamat: string
 
   @column()
+  public tgl_lahir: string
+
+  @column()
   public email: string
 
   @column({ serializeAs: null })
