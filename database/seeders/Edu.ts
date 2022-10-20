@@ -27,7 +27,7 @@ export default class extends BaseSeeder {
         img: './../../images/edukasi/ed1.webp',
         link: '/', 
         jenis: 'arwana',
-        cat: 'mudah'
+        cat: 'sulit'
       }
     
     ])

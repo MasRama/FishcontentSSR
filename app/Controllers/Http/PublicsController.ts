@@ -12,13 +12,13 @@ export default class PublicsController {
   }
 
   public async edu({ request, view }: HttpContextContract) {
+    
     const coursesPerPage = 6;
     const courses = await Edu.all();
     const param = request.qs();
-
-    function capitalize(word) {
-      const lower = word.toLowerCase();
-      return word.charAt(0).toUpperCase() + lower.slice(1);
+    
+    function capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     if(param.jenis) {
@@ -34,7 +34,7 @@ export default class PublicsController {
         pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
         id: Number(param.page),
         jenis: capitalize(param.jenis),
-        cat: capitalize(param.cat) || null
+        cat: param.cat ? capitalize(param.cat) : param.cat
       });
     }
 
@@ -47,7 +47,7 @@ export default class PublicsController {
         ),
         pagination: Array(Math.ceil(courses.length / coursesPerPage)).fill(""),
         id: Number(param.page),
-        cat: capitalize(param.cat)
+        cat: param.cat ? capitalize(param.cat) : param.cat
       });
     }
 
@@ -83,7 +83,7 @@ export default class PublicsController {
   }
 
   public async dashboard({ view, auth }: HttpContextContract) {
-    console.log(auth.user?.$attributes.nama)
+    
     return view.render("dashboard/profile", {
       username: auth.user?.$attributes.username,
       nama: auth.user?.$attributes.nama,
