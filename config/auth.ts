@@ -80,6 +80,16 @@ const authConfig: AuthConfig = {
         model: () => import('App/Models/User'),
       },
     },
+    admin: {
+      driver: "session",
+
+      provider: {
+        driver: "lucid",
+        identifierKey: "id",
+        uids: ["wa"],
+        model: () => import("App/Models/Admin"),
+      },
+    },
   },
 }
 

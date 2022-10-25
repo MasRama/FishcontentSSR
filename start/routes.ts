@@ -27,9 +27,10 @@ Route.group(() => {
     Route.get("/edukasi", "PublicsController.edu");
     Route.get("/sharing", "PublicsController.sharing");
     Route.get("/dashboard/profile", "PublicsController.dashboard");
-    Route.get("/edukasi/adm00", "PublicsController.eduadm");
   
-}).middleware("auth");
+}).middleware("auth:web");
+
+Route.get("/edukasi/adm00", "PublicsController.eduadm").middleware("auth:admin");
 
 Route.resource("verify", "VerifsController");
 
@@ -37,9 +38,12 @@ Route.resource("reset", "ResetsController");
 
 Route.get("/login", "AuthController.loginPage");
 Route.get("/regis", "AuthController.regisPage");
+
 Route.get("/login/adm00", async ({ view }) => {
     return view.render('loginAdmin');
 });
+
+Route.post("/login/adm00", 'AuthController.loginAdm');
 
 
 Route.post("/reset/:id", "ResetsController.newPass");

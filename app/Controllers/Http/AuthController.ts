@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
+import Admin from 'App/Models/Admin'
 import Redis from '@ioc:Adonis/Addons/Redis'
 import { v4 as uuidv4 } from 'uuid';
 import {verifSend} from '../../Scripts/verifSend'
@@ -32,14 +33,28 @@ export default class AuthController {
 
   }
 
+  public async loginAdm({ request, auth, response }: HttpContextContract) {
+
+    const waFind = await Admin.findBy('wa', request.input('wa'))
+
+    if(waFind) {
+      await auth.use('admin').login(waFind)
+      response.redirect('/edukasi/adm00?page=1')
+    } 
+
+    return 'gk ad'
+
+  }
+
   public async login({ auth, request, view }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
+    const userAuth = auth.use('web')
 
     try {
-      await auth.use('web').attempt(email, password)
+      await userAuth.attempt(email, password)
 
-      if(!auth.user?.is_verified) {
+      if(!userAuth.user?.is_verified) {
         return view.render('login', {error: "Silahkan Verifikasi Email Anda Terlebih Dahulu"})
       }
 

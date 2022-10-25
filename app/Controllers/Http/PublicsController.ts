@@ -5,7 +5,8 @@ import Edu from 'App/Models/Edu';
 export default class PublicsController {
   
   public async home({ view, auth }: HttpContextContract) {
-    if (auth.user) {
+    const userAuth = auth.use('web')
+    if (userAuth.user) {
       return view.render("home");
     }
     return view.render("home", { isLogin: "no" });
@@ -83,15 +84,15 @@ export default class PublicsController {
   }
 
   public async dashboard({ view, auth }: HttpContextContract) {
-    
+    const userAuth = auth.use('web')
     return view.render("dashboard/profile", {
-      username: auth.user?.$attributes.username,
-      nama: auth.user?.$attributes.nama,
-      gender: auth.user?.$attributes.gender,
-      tgl_lahir: auth.user?.$attributes.tgl_lahir,
-      telp: auth.user?.$attributes.telp,
-      email: auth.user?.$attributes.email,
-      alamat: auth.user?.$attributes.alamat
+      username: userAuth.user?.username,
+      nama: userAuth.user?.nama,
+      gender: userAuth.user?.gender,
+      tgl_lahir: userAuth.user?.tgl_lahir,
+      telp: userAuth.user?.telp,
+      email: userAuth.user?.email,
+      alamat: userAuth.user?.alamat
     });
   }
 
