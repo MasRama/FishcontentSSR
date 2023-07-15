@@ -1,0 +1,16 @@
+<div class="relative duration-300">
+  <input
+    class="peer  rounded-md border transition-colors w-full px-4 py-3 border-gray-400 disabled:cursor-not-allowed focus:border-black"
+    {{--  disabled="{{disabled}}"  --}}
+    id="{{id}}"
+    name="{{name}}"
+    type="{{type}}"
+    placeholder=" "
+  />
+  <label
+    for="{{id}}"
+    class="absolute transition-all text-gray-400 rounded-lg px-1 py-0.5 duration-0  text-sm origin-[0] cursor-text left-4 top-0 -translate-y-1/2  scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-1/2  peer-focus:scale-75  peer-focus:top-0 bg-white peer-focus:text-black"
+  >
+    {{label}}
+  </label>
+</div>

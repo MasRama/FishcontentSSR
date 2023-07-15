@@ -27,6 +27,7 @@ Route.group(() => {
     Route.get("/edukasi", "PublicsController.edu");
     Route.get("/sharing", "PublicsController.sharing");
     Route.get("/dashboard/profile", "PublicsController.dashboard");
+    Route.get("/shop", "PublicsController.shop");
   
 }).middleware("auth:web");
 

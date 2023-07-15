@@ -7,9 +7,9 @@ export default class PublicsController {
   public async home({ view, auth }: HttpContextContract) {
     const userAuth = auth.use('web')
     if (userAuth.user) {
-      return view.render("home");
+      return view.render("pages/home");
     }
-    return view.render("home", { isLogin: "no" });
+    return view.render("pages/home", { isLogin: "no" });
   }
 
   public async edu({ request, view }: HttpContextContract) {
@@ -27,7 +27,7 @@ export default class PublicsController {
       if(param.cat) {
         findJenis = await Edu.query().where('jenis', param.jenis).where('cat', param.cat)
       }
-      return view.render("edukasi", {
+      return view.render("pages/edukasi", {
         courses: findJenis.slice(
           (param.page - 1) * coursesPerPage,
           coursesPerPage * param.page
@@ -41,7 +41,7 @@ export default class PublicsController {
 
     if(param.cat) {
       const findCat = await Edu.query().where('cat', param.cat)
-      return view.render("edukasi", {
+      return view.render("pages/edukasi", {
         courses: findCat.slice(
           (param.page - 1) * coursesPerPage,
           coursesPerPage * param.page
@@ -52,7 +52,7 @@ export default class PublicsController {
       });
     }
 
-    return view.render("edukasi", {
+    return view.render("pages/edukasi", {
       courses: courses.slice(
         (param.page - 1) * coursesPerPage,
         coursesPerPage * param.page
@@ -67,7 +67,7 @@ export default class PublicsController {
         const d = [...courses, {isAdd : true , link : "/"}]
         const param = request.qs();
 
-    return view.render("edukasiadm", {
+    return view.render("pages/edukasiadm", {
       courses: d.slice(
         (param.page - 1) * coursesPerPage,
         coursesPerPage * param.page
@@ -80,12 +80,12 @@ export default class PublicsController {
   }
 
   public async sharing({ view }: HttpContextContract) {
-    return view.render("sharing");
+    return view.render("pages/sharing");
   }
 
   public async dashboard({ view, auth }: HttpContextContract) {
     const userAuth = auth.use('web')
-    return view.render("dashboard/profile", {
+    return view.render("pages/dashboard/profile", {
       username: userAuth.user?.username,
       nama: userAuth.user?.nama,
       gender: userAuth.user?.gender,
@@ -93,6 +93,15 @@ export default class PublicsController {
       telp: userAuth.user?.telp,
       email: userAuth.user?.email,
       alamat: userAuth.user?.alamat
+    });
+  }
+
+  public async shop({ view }: HttpContextContract) {
+    return view.render("pages/shop",{
+      menus : [{label: "Profile saya", url : ""},{
+        label : "Pesanan saya", url : ""},
+        {label: "Logout" , url: ""},
+      ]
     });
   }
 

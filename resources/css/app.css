@@ -5,7 +5,7 @@
 
 @layer components{
     .container{
-        @apply w-[90%] lg:max-w-[1440px] ;
+        @apply w-[90%] lg:max-w-7xl ;
     }
     .link{
         @apply capitalize text-base font-medium text-gray-500 transition duration-200 hover:text-gray-700 opacity-80;
@@ -45,6 +45,9 @@
 
 
 
+[x-cloak] {
+  display: none;
+}
 
 @font-face {
     font-family: 'Poppins' ;

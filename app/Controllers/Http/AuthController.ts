@@ -10,20 +10,20 @@ export default class AuthController {
   public async loginPage({ view, auth }: HttpContextContract) {
 
     if(auth.user) {
-      return view.render('home')
+      return view.render('pages/home')
      }
 
-    return view.render('login')
+    return view.render('pages/login')
   }
 
 
   public async regisPage({ view, auth }: HttpContextContract) {
 
     if(auth.user) {
-      return view.render('home')
+      return view.render('pages/home')
      }
 
-    return view.render('regis')
+    return view.render('pages/regis')
   }
 
   public async logout({ response, auth }: HttpContextContract) {
@@ -49,19 +49,21 @@ export default class AuthController {
   public async login({ auth, request, view }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
+    console.log(email)
+    console.log(password)
     const userAuth = auth.use('web')
 
     try {
       await userAuth.attempt(email, password)
 
       if(!userAuth.user?.is_verified) {
-        return view.render('login', {error: "Silahkan Verifikasi Email Anda Terlebih Dahulu"})
+        return view.render('pages/login', {error: "Silahkan Verifikasi Email Anda Terlebih Dahulu"})
       }
 
-      return view.render('home')  
+      return view.render('pages/home')  
          
     } catch {
-      return view.render('login', { error: 'Email/Password Salah, Silahkan coba lagi' })
+      return view.render('pages/login', { error: 'Email/Password Salah, Silahkan coba lagi' })
     }
   }
 

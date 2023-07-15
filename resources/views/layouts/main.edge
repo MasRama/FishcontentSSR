@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+
+  <link rel="icon" type="image/png" href="../images/icon.webp">
+  <script src="../js/login.js" defer></script>
+
+</head>
+
+<body class="  min-h-screen  font-poppins  ">
+  <header class="fixed top-0 z-[99] inset-x-0">
+    @include('components/navbar')
+  </header>
+  <main>
+    @!section('body')
+  </main>
+  @include('components/footer')
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+@layout('layouts/eduLayout')
+@set('title', "FishContent | Edu" )
+
+@section('body')
+<div class=" gap-5 gap-y-8 items-start pt-10 sm:pt-20  ">
+  <section class="">
+    <div class=" py-6">
+      <div>
+        <div class="sm:flex sm:space-x-5">
+          <div class="mt-4 text-left sm:mt-0 sm:pt-1 ">
+            <h2 class="text-2xl font-bold text-black sm:text-4xl mb-2">Ruang Edukasi</h2>
+            <p class="text-sm  md:text-base font-semibold text-gray-600">Dimana kamu bisa belajar tentang
+              aquatik
+              dan perikanan</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {{-- search  --}}
+    <div class=" border-b border-gray-200  py-4 mt-4">
+      <div class=" flex items-center gap-4 justify-between">
+        {{-- search bar  --}}
+        <div class="ml-auto w-full max-w-md flex gap-4">
+          <div class=" relative flex-1">
+            <label class="block text-gray-500 absolute top-1/2 -translate-y-1/2 right-2" for="sq">
+              <svg class="w-6 h-6" x-description="Heroicon name: outline/search" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </label>
+            <input type="text" name="sq" id="sq" placeholder="Cari product anda"
+              class="w-full text-sm md:text-base placeholder:text-gray-400 rounded-lg border-gray-400">
+          </div>
+          <button class="bg-primary text-white px-7 py-2 rounded-md text-sm md:text-base">Cari</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- main content -->
+
+  <!-- header section , includes filter search etc-->
+
+
+  <!-- courses section-->
+  <div class="relative pt-8 md:pt-12 pb-24 lg:grid lg:grid-cols-4 xl:grid-cols-6 lg:gap-x-8 ">
+    <section aria-labelledby="product-heading" class="mt-6 lg:mt-0 lg:col-span-2 xl:col-span-4">
+      <div class=" mb-7 flex justify-end gap-2 ">
+        <div class="flex gap-2 sm:gap-5 items-center ">
+          <span class="hidden md:block text-sm md:text-base">Urutkan :</span>
+          <select class="bg-gray-100 border border-gray-300 rounded-md text-sm md:text-base">
+            <option value="terbaru">Terbaru</option>
+            <option value="terbaru">TerLama</option>
+            <option value="terbaru">Populer</option>
+          </select>
+          <select class="bg-gray-100 border border-gray-300 rounded-md  text-sm md:text-base">
+            <option value="" selected disabled>Harga</option>
+            <option value="terbaru">Tertinggi</option>
+            <option value="terbaru">Terendah</option>
+          </select>
+        </div>
+        <button type="button" class="inline-flex text-sm  items-center border border-gray-300 bg-gray-100 px-5 py-2 rounded-md  "
+          x-bind="sidebar_toggler">
+          <span class=" font-medium text-gray-700">Filter</span>
+          <!-- Heroicon name: solid/plus-sm -->
+          <svg class="flex-shrink-0 ml-1 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+            fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+      </div>
+      <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-5 xl:grid-cols-3">
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+        @!component('components/atoms/course')
+      </div>
+    </section>
+    <div class="relative col-span-2">
+      <aside class="hidden lg:block sticky top-24  gap-6">
+        <!-- series belajar -->
+        <section aria-labelledby="announcements-title">
+          <div class="rounded-lg  bg-white ring-1 ring-gray-200 shadow-md overflow-hidden ">
+            <div class="p-6">
+              <h2 class="text-base font-medium text-gray-900" id="announcements-title">Materi Batch
+              </h2>
+              <div class="flow-root mt-6">
+                <ul role="list" class="-my-5 divide-y divide-gray-200">
+                  <li class="py-5">
+                    <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                      <h3 class="text-sm font-semibold text-gray-800 mt-1">
+                        <a href="#" class="hover:underline focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          Cupang Series
+                        </a>
+                      </h3>
+                      <p class="mt-1 text-[.8rem] text-gray-600 line-clamp-2">Materi tentang
+                        cupang
+                        lengkap , mulai dari teknik beternak dan perawatanya.</p>
+                    </div>
+                  </li>
+
+                  <li class="py-5">
+                    <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                      <h3 class="text-sm font-semibold text-gray-800 mt-1">
+                        <a href="#" class="hover:underline focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          Aquascape Series
+                        </a>
+                      </h3>
+                      <p class="mt-1 text-[.8rem] text-gray-600 line-clamp-2">Belajar
+                        aquascape
+                        lengkap
+                        mulai dari pemula.</p>
+                    </div>
+                  </li>
+
+                  <li class="py-5">
+                    <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                      <h3 class="text-sm font-semibold text-gray-800 mt-1">
+                        <a href="#" class="hover:underline focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          chana series
+                        </a>
+                      </h3>
+                      <p class="mt-1 text-[.8rem] text-gray-600 line-clamp-2">Materi tentang
+                        chana
+                        lengkap , mulai dari teknik beternak dan perawatanya.</p>
+                    </div>
+                  </li>
+                  <li class="py-5">
+                    <div class="relative focus-within:ring-2 focus-within:ring-orange-500">
+                      <h3 class="text-sm font-semibold text-gray-800 mt-1">
+                        <a href="#" class="hover:underline focus:outline-none">
+                          <!-- Extend touch target to entire panel -->
+                          <span class="absolute inset-0" aria-hidden="true"></span>
+                          Salt Water series
+                        </a>
+                      </h3>
+                      <p class="mt-1 text-[.8rem] text-gray-600 line-clamp-2">Mari belajar
+                        tentang
+                        ikan
+                        hias air asin.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- lihat semua -->
+              <div class="mt-6">
+                <a href="#"
+                  class="w-full flex justify-center items-center px-5 py-3 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-orange-500  hover:bg-orange-500  transition">
+                  Lihat Semua </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  diakses -->
+        <section aria-labelledby="recent-hires-title">
+          <div class="rounded-lg bg-white ring-1 ring-gray-100 shadow-md overflow-hidden ">
+            <div class="p-6">
+              <h2 class="text-base font-medium text-gray-900" id="recent-hires-title">Baru Dibuka</h2>
+              <div class="flow-root mt-6">
+                <ul role="list" class="-my-5 divide-y divide-gray-200">
+                  <li class="py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium">Cara berternak ikan cupang</p>
+                      </div>
+                      <div>
+                        <a href="#"
+                          class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                          Lihat </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium">Cara berternak ikan daz borneo</p>
+                      </div>
+                      <div>
+                        <a href="#"
+                          class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                          Lihat </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="py-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium">Cara berternak ikan chana</p>
+                      </div>
+                      <div>
+                        <a href="#"
+                          class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
+                          Lihat </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6">
+                <a href="#"
+                  class="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-white bg-orange-500  hover:bg-orange-500  transition">
+                  Lihat Semua </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+@end
