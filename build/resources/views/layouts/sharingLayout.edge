@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+  <link rel="icon" type="image/png" href="../images/icon.webp">
+  <script src="../js/login.js" defer></script>
+  <script src="https://kit.fontawesome.com/b108c7dc53.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-gray-100  min-h-screen  font-poppins  ">
+  <header class="fixed top-0 bg-white z-[99] inset-x-0  border-gray-300 border-b">
+    <div>
+      <nav aria-label="Top" class="max-w-7xl px-4 md:px-0 mx-auto ">
+        <div class=" py-4 sm:py-6 ">
+          <div class=" flex items-center justify-between">
+            {{-- hamburger  --}}
+            <button type="button" class="bg-white  rounded-md text-gray-400 lg:hidden">
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
+            <!-- Logo -->
+            <div class="ml-4 flex lg:ml-0">
+              <a href="/" class="hidden sm:flex items-center gap-3">
+                <img class="w-8 h-8 md:w-10 md:h-10 rounded-md" src="/images/icon.webp" alt="">
+                <span class="font-bold text-xl hidden md:block">Fishcontent Sharing</span>
+              </a>
+            </div>
+            <div class="flex gap-3 sm:gap-7 items-center">
+              <button class="inline-flex gap-2 border border-gray-400 shadow-md px-5 py-2 rounded-md">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                  </svg>
+                </span>
+                <span class="text-sm md:text-base">Buat Postingan</span>
+              </button>
+              <button class="">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-7 h-7">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+              </button>
+              <div class="relative flex items-center" x-data="Dropdown({open: false})" x-init="init()"
+                x-bind="dropdown_container">
+                <button class="h-8 w-8 sm:w-10 sm:h-10 rounded-full bg-gray-200" x-bind="dropdown_control">
+                  <img src="/images/dashboard/client3.webp" alt="">
+                </button>
+                <div class="z-10  absolute top-14  right-0  rounded-md bg-white border border-gray-200 shadow-md"
+                  x-bind="dropdown_panel" role="menu">
+                  <ul class="flex  flex-col w-max   ">
+                    <li role="menuitem" class="text-sm w-ful h-full  ">
+                      <a href="/profile" title="pergi ke profile" class="px-7 py-3 block  hover:bg-gray-200">Profile
+                        saya</a>
+                    </li>
+                    <li role="menuitem" class="text-sm w-ful h-full ">
+                      <a href="/carts" title="pergi ke pesanan ku" class="px-7 py-3 block hover:bg-gray-200">Pesanan
+                        Saya</a>
+                    </li>
+                    <li role="menuitem" class="text-sm w-ful h-full" title="logout">
+                      <form action="/logout" method="post">
+                        {{ csrfField() }}
+                        <button class="px-7 w-full py-3 block text-left hover:bg-gray-200">Logout</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </nav>
+    </div>
+  </header>
+  <main class="max-w-7xl w-full mx-auto py-10">
+    @!section('body')
+  </main>
+  @include('components/footer')
+</body>
+
+</html>

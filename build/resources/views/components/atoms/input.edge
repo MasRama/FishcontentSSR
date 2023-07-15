@@ -1,0 +1,11 @@
+<div class="space-y-2">
+  <label for="email" class="text-sm sm:text-base text-black">{{label}}</label>
+  <div class="flex gap-3">
+    @if(icon)
+    <span class="flex items-center"><i class="{{icon}}"></i></span>
+    @endif
+    <input type="{{type}}" name="{{name}}" id="{{id}}" placeholder="{{placeholder}}"
+      class="w-full border-2  outline-none  border-white focus:border-black text-sm md:text-base py-3 px-6  rounded-lg  transition-colors duration-150 ">
+  </div>
+  <small class="mt-2  text-red-600 hidden "></small>
+</div>
