@@ -4,10 +4,10 @@ const  Sidebar = () => ({
     init(){
         this.$watch('isOpen', value => {
             if(value){
-                document.body.style.paddingRight = '15px'
+                document.body.style.marginRight = '14px'
                 document.body.classList.add('overflow-hidden')
             }else{
-                document.body.style.paddingRight = '0px'
+                document.body.style.marginRight = '0px'
                 document.body.classList.remove('overflow-hidden')
                 
             }
