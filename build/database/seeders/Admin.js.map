@@ -1,0 +1,1 @@
+{"version":3,"file":"Admin.js","sourceRoot":"","sources":["../../../database/seeders/Admin.ts"],"names":[],"mappings":";;;;;AAAA,uFAAiD;AACjD,mFAAoC;AAEpC,eAAqB,SAAQ,gBAAU;IAC9B,KAAK,CAAC,GAAG;QACd,MAAM,eAAK,CAAC,MAAM,CAAC;YACjB,EAAE,EAAE,eAAe;YACnB,IAAI,EAAE,MAAM;SACb,CAAC,CAAA;IACJ,CAAC;CACF;AAPD,4BAOC"}

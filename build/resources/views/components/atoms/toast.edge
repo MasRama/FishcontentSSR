@@ -1,0 +1,21 @@
+<div class="flex p-5 bg-{{color}}-300 max-w-xs sm:max-w-none  gap-4 rounded-xl items-center mb-6 justify-between fixed top-2 right-2" 
+x-data="{isShow: true}" 
+x-transition:enter="transition linear duration-[1000ms]"
+x-transition:enter-start="opacity-0 translate-x-full"
+x-transition:enter-end="opacity-100 translate-x-0" 
+x-transition:leave="transition linear duration-[1000ms]"
+x-transition:leave-start="opacity-100 translate-x-0"
+x-transition:leave-end="opacity-0 translate-x-full"
+x-init=" setTimeout(() => isShow = false , 6000)"
+x-show="isShow">
+  <div class="flex gap-4 lg:gap-7 items-center">
+    <div class="w-6 sm:w-8 flex-shrink-0"> <img src={{src}} alt="cancel" /> </div>
+    <div>
+      <h3 class="text-sm font-bold  sm:font-medium sm:text-lg mb-1">{{title}}</h3>
+      <p class="text-xs font-medium sm:text-base">{{msg}}</p>
+    </div>
+  </div>
+  <button @click="isShow= false" class="toast-toggler"> <img
+      src="https://img.icons8.com/external-gradak-royyan-wijaya/30/000000/external-delete-gradak-interface-gradak-royyan-wijaya.png"
+      alt="gradak" /> </button>
+</div>

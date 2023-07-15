@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+  <link rel="icon" type="image/png" href="../images/icon.webp">
+  <script src="https://kit.fontawesome.com/b108c7dc53.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="  min-h-screen  font-poppins  ">
+  <header class="fixed top-0 bg-white z-10 inset-x-0 border-gray-300 border-b">
+    <div>
+      <nav aria-label="Top" class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
+        <div class=" py-4 sm:py-6 ">
+          <div class=" flex items-center justify-between">
+            {{-- hamburger  --}}
+            <button type="button" class="bg-white  rounded-md text-gray-400 lg:hidden">
+              <span class="sr-only">Open menu</span>
+
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
+            <!-- Logo -->
+            <div class="ml-4 hidden sm:flex lg:ml-0">
+              <a href="/" class="flex items-center gap-3">
+                <img class="w-8 h-8 md:w-10 md:h-10 rounded-md" src="/images/icon.webp" alt="">
+                <span class="font-bold text-xl hidden md:block">Fishcontent EDU</span>
+              </a>
+            </div>
+
+            <div class="relative flex items-center" x-data="Dropdown({open: false})" x-init="init()"
+              x-bind="dropdown_container">
+              <button class=" w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-gray-200" x-bind="dropdown_control">
+                <img src="/images/dashboard/client3.webp" alt="">
+              </button>
+              <div class="z-10  absolute top-14  right-0  rounded-md bg-white border border-gray-200 shadow-md"
+                x-bind="dropdown_panel" role="menu">
+                <ul class="flex  flex-col w-max   ">
+                  <li role="menuitem" class="text-sm w-ful h-full  ">
+                    <a href="/profile" title="pergi ke profile" class="px-7 py-3 block  hover:bg-gray-200">Profile
+                      saya</a>
+                  </li>
+                  <li role="menuitem" class="text-sm w-ful h-full ">
+                    <a href="/carts" title="pergi ke pesanan ku" class="px-7 py-3 block hover:bg-gray-200">Pesanan
+                      Saya</a>
+                  </li>
+                  <li role="menuitem" class="text-sm w-ful h-full" title="logout">
+                    <form action="/logout" method="post">
+                      {{ csrfField() }}
+                      <button class="px-7 w-full py-3 block text-left hover:bg-gray-200">Logout</button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </nav>
+    </div>
+  </header>
+  <main class="max-w-2xl mx-auto px-4 lg:max-w-7xl lg:px-8 py-10">
+    @!section('body')
+  </main>
+  @include('components/footer')
+</body>
+
+</html>

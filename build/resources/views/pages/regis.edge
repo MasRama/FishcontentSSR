@@ -1,0 +1,79 @@
+@layout('layouts/guestLayout')
+@set('title', "FishContentID | Register" )
+
+@section('body')
+<main class="w-full  my-16 sm:my-0 flex items-center h-full ">
+  <div
+    class="w-11/12  max-w-2xl xl:max-w-screen-2xl flex flex-col gap-6 xl:items-start  lg:gap-0 mx-auto  justify-center xl:flex-row xl:justify-between  ">
+    <div class=" basis-2/5 ">
+      <h2
+        class="text-center text-xl mb-5 sm:text-2xl md:text-3xl md:leading-normal lg:text-3xl lg:leading-normal xl:leading-[1.5] lg:text-left xl:text-4xl">
+        Jadilah bagian dari FishContent Indonesia untuk menikmati fasilitas yang ada.</h2>
+      <p class="text-lg hidden xl:block  opacity-100">Sudah memiliki akun ?, login <a class="text-blue-700"
+          href="/login"> disini!</a></p>
+    </div>
+    <div class=" w-full  xl:basis-[700px] ">
+      <form action="/regis" method="POST" class="w-full">
+        {{ csrfField() }}
+        <div class="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-2 gap-x-8 gap-y-4">
+          @!component('components/atoms/input',{
+          name: 'username',
+          placeholder: 'Masukkan username anda',
+          type: 'text',
+          label: 'Username',
+          icon : "fa-solid fa-user",
+          id : "inputusername"
+          })
+          
+          @!component('components/atoms/input',{
+            name: 'email',
+            placeholder: 'Masukkan Email anda',
+            type: 'email',
+            icon : 'fa-solid fa-envelope',
+            label: 'Email',
+            id : "inputEmail"
+          })
+    
+          <div class="mb-2">
+            <label for="jk-in" class="text-sm block lg:text-base text-gray-500 font-medium mb-2">Jenis Kelamin</label>
+            <div class="flex gap-4">
+              <span class="flex items-center"><i class="fa-solid fa-venus-mars"></i></span>
+              <select name="gender" id="jk-in" class="py-3 w-full px-5">
+                <option value="" class="text-gray-500" selected disabled>Pilih Jenis kelamin</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <small class="text-red-600 mt-2 hidden validate"></small>
+          </div>
+          @!component('components/atoms/input',{
+          name: 'telepon',
+          placeholder: 'Masukkan no telepon anda',
+          type: 'tel',
+          icon: "fa-solid fa-phone",
+          label: 'Telepon',
+          id : "inputEmail"
+          })
+          @!component('components/atoms/passwordInput',{
+          name: 'email',
+          placeholder: 'Password anda',
+          label: 'Password',
+          id : "inputPassword"
+          })
+          @!component('components/atoms/passwordInput',{
+          name: 'sdf',
+          placeholder: 'Konfirmasi Password anda',
+          label: 'Konfirmasi Password',
+          id : "inputPWC"
+          })
+          
+        </div>
+        <input type="submit" value="Buat akun" class="mt-8 px-7 py-3 rounded-md btn-third ">
+        <p class="mt-5 text-sm md:text-base text-center  font-medium opacity-100 xl:hidden">Sudah memililki
+          akun ?,
+          login<a class="text-blue-700" href="/login"> disini!</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+@end
