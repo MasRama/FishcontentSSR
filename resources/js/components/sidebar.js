@@ -1,6 +1,18 @@
 const  Sidebar = () => ({
         
     isOpen : false,
+    init(){
+        this.$watch('isOpen', value => {
+            if(value){
+                document.body.style.paddingRight = '15px'
+                document.body.classList.add('overflow-hidden')
+            }else{
+                document.body.style.paddingRight = '0px'
+                document.body.classList.remove('overflow-hidden')
+                
+            }
+        })
+    },
     toggleSidebar() {
         this.isOpen = !this.isOpen
     },

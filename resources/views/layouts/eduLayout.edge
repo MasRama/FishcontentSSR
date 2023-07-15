@@ -13,10 +13,10 @@
 </head>
 
 <body class="  min-h-screen  font-poppins  ">
-  <header class="fixed top-0 bg-white z-[99] inset-x-0 border-gray-300 border-b">
+  <header class="fixed top-0 bg-white z-10 inset-x-0 border-gray-300 border-b">
     <div>
       <nav aria-label="Top" class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
-        <div class=" py-4  ">
+        <div class=" py-4 sm:py-6 ">
           <div class=" flex items-center justify-between">
             {{-- hamburger  --}}
             <button type="button" class="bg-white  rounded-md text-gray-400 lg:hidden">
@@ -29,51 +29,42 @@
             </button>
 
             <!-- Logo -->
-            <div class="ml-4 flex lg:ml-0">
+            <div class="ml-4 hidden sm:flex lg:ml-0">
               <a href="/" class="flex items-center gap-3">
                 <img class="w-8 h-8 md:w-10 md:h-10 rounded-md" src="/images/icon.webp" alt="">
                 <span class="font-bold text-xl hidden md:block">Fishcontent EDU</span>
               </a>
             </div>
-            <!-- Cart -->
-            <div class="flex gap-4 items-center">
-              <div class="">
-                <a href="/shop/carts" class="group -m-2 p-2 flex items-center">
-                  <!-- Heroicon name: outline/shopping-bag -->
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                  </svg>
-                  {{-- <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>  --}}
-                  <span class="sr-only">items in cart, view bag</span>
-                </a>
-              </div>
-              <div class="relative flex items-center" x-data="Dropdown({open: false})" x-init="init()" x-bind="dropdown_container">
-                <button class=" w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-gray-200" x-bind="dropdown_control">
-                  <img src="/images/dashboard/client3.webp" alt="">
-                </button>
-                <div class="z-10  absolute top-14  right-0  rounded-md bg-white border border-gray-200 shadow-md" x-bind="dropdown_panel" role="menu">
-                  <ul class="flex  flex-col w-max   ">
-                    <li role="menuitem" class="text-sm w-ful h-full  ">
-                      <a href="/profile" title="pergi ke profile" class="px-7 py-3 block  hover:bg-gray-200">Profile saya</a>
-                    </li>
-                    <li role="menuitem" class="text-sm w-ful h-full ">
-                      <a href="/carts" title="pergi ke pesanan ku" class="px-7 py-3 block hover:bg-gray-200">Pesanan Saya</a>
-                    </li>
-                    <li role="menuitem" class="text-sm w-ful h-full" title="logout">
-                      <form action="/logout" method="post">
-                        {{ csrfField() }}
-                        <button  class="px-7 w-full py-3 block text-left hover:bg-gray-200">Logout</button>
-                      </form>
-                    </li>
-                  </ul>
-                </div>
+
+            <div class="relative flex items-center" x-data="Dropdown({open: false})" x-init="init()"
+              x-bind="dropdown_container">
+              <button class=" w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-gray-200" x-bind="dropdown_control">
+                <img src="/images/dashboard/client3.webp" alt="">
+              </button>
+              <div class="z-10  absolute top-14  right-0  rounded-md bg-white border border-gray-200 shadow-md"
+                x-bind="dropdown_panel" role="menu">
+                <ul class="flex  flex-col w-max   ">
+                  <li role="menuitem" class="text-sm w-ful h-full  ">
+                    <a href="/profile" title="pergi ke profile" class="px-7 py-3 block  hover:bg-gray-200">Profile
+                      saya</a>
+                  </li>
+                  <li role="menuitem" class="text-sm w-ful h-full ">
+                    <a href="/carts" title="pergi ke pesanan ku" class="px-7 py-3 block hover:bg-gray-200">Pesanan
+                      Saya</a>
+                  </li>
+                  <li role="menuitem" class="text-sm w-ful h-full" title="logout">
+                    <form action="/logout" method="post">
+                      {{ csrfField() }}
+                      <button class="px-7 w-full py-3 block text-left hover:bg-gray-200">Logout</button>
+                    </form>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </nav>
+    </div>
+    </nav>
     </div>
   </header>
   <main class="max-w-2xl mx-auto px-4 lg:max-w-7xl lg:px-8 py-10">

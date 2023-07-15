@@ -17,7 +17,7 @@
   <header class="fixed top-0 bg-white z-[99] inset-x-0 border-gray-300 border-b">
     <div>
       <nav aria-label="Top" class="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
-        <div class=" py-4 ">
+        <div class=" py-4 sm:py-6 ">
           <div class=" flex items-center justify-between">
             {{-- hamburger  --}}
             <button type="button" class="bg-white  rounded-md text-gray-400 lg:hidden">
@@ -31,7 +31,7 @@
 
             <!-- Logo -->
             <div class="ml-4 flex lg:ml-0">
-              <a href="/" class="flex items-center gap-3">
+              <a href="/" class="hidden sm:flex items-center gap-3">
                 <img class="w-8 h-8 md:w-10 md:h-10 rounded-md" src="/images/icon.webp" alt="">
                 <span class="font-bold text-xl hidden md:block">Fishcontent Marketplace</span>
               </a>
@@ -54,19 +54,18 @@
                 <button class="h-8 w-8 sm:w-10 sm:h-10 rounded-full bg-gray-200" x-bind="dropdown_control">
                   <img src="/images/dashboard/client3.webp" alt="">
                 </button>
-                <div class="z-10  absolute top-14  right-0  rounded-md bg-yellow-300" x-bind="dropdown_panel" role="menu">
+                <div class="z-10  absolute top-14  right-0  rounded-md bg-white border border-gray-200 shadow-md" x-bind="dropdown_panel" role="menu">
                   <ul class="flex  flex-col w-max   ">
                     <li role="menuitem" class="text-sm w-ful h-full  ">
-                      <a href="/profile" class="px-5 py-2 block  hover:bg-yellow-400">Profile saya</a>
+                      <a href="/profile" title="pergi ke profile" class="px-7 py-3 block  hover:bg-gray-200">Profile saya</a>
                     </li>
                     <li role="menuitem" class="text-sm w-ful h-full ">
-                      <a href="/carts" class="px-5 py-2 block hover:bg-yellow-400">Pesanan Saya</a>
+                      <a href="/carts" title="pergi ke pesanan ku" class="px-7 py-3 block hover:bg-gray-200">Pesanan Saya</a>
                     </li>
-                    <li role="menuitem" class="text-sm w-ful h-full ">
-                      
+                    <li role="menuitem" class="text-sm w-ful h-full" title="logout">
                       <form action="/logout" method="post">
                         {{ csrfField() }}
-                        <button  class="px-5 w-full py-2 block text-left hover:bg-yellow-400">Logout</button>
+                        <button  class="px-7 w-full py-3 block text-left hover:bg-gray-200">Logout</button>
                       </form>
                     </li>
                   </ul>

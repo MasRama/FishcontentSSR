@@ -1,54 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FishContent Indonesia</title>
-  @entryPointStyles('app')
+@layout('layouts/sharingLayout')
+@set('title', "FishcontentID | Sharing" )
 
-  <link rel="icon" type="image/png" href="../images/icon.webp">
-        
-</head>
-
-
-<body class="font-poppins">
-        <header class="">
-            
-            @include('components/navbar')
-
-        </header>
-        <main>
-            <div class="container mx-auto text-center mt-24 ">
-                <h2 class="mb-5">Our Services</h2>
-                <p class="text-base">There are many variations of passages of Lorem Ipsum available, but the majority have </p>
-                <section class=" grid gap-4 mt-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 ">
-                    <div class="flex relative flex-col items-center   border-[1px] border-gray-200 px-8 py-12 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:cursor-pointer duration-300 after:w-full  after:h-2 after:top-0 after:absolute after:rounded-lg hover:after:bg-red-500  after:transition-all">
-                        <img src="images/sharing/card-item-1.webp" alt="orange">
-                        <div class="mt-4">
-                            <h4 class="mb-5">Orange</h4>
-                            <p class="text-sm md:text-base">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                        </div>
-                    </div>
-                    <div class=" flex relative flex-col items-center  border-[1px] border-gray-200 px-8 py-12 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:cursor-pointer duration-300 after:w-full  after:h-2 after:top-0 after:absolute after:rounded-lg hover:after:bg-yellow-500 after:transition-all">
-                        <img src="images/sharing/card-item-2.webp" alt="orange">
-                        <div class="mt-4">
-                            <h4 class="mb-5">Grapes</h4>
-                            <p class="text-sm md:text-base">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                        </div>
-                    </div>
-                    <div class=" flex relative flex-col items-center  border-[1px] border-gray-200 px-8 py-12 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:scale-[1.03] hover:cursor-pointer duration-300 after:w-full  after:h-2 after:top-0 after:absolute after:rounded-lg hover:after:bg-green-500 after:transition-all">
-                        <img src="images/sharing/card-item-3.webp" alt="orange">
-                        <div class="mt-4">
-                            <h4 class="mb-5">Guava</h4>
-                            <p class="text-sm md:text-base">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                        </div>
-                    </div>
-                </section>
-                <button class="btn btn-third mt-12">Read more</button>
-            </div>
-        </main>
-        
-        @include('components/footer')
-
-    </body>
-</html>
+@section('body')
+  <div class="grid lg:grid-cols-6 xl:grid-cols-4  pt-10 md:pt-20 gap-5 items-start">
+    @include('pages/sharing/leftSidebar')
+    <div class="  lg:col-span-4 xl:col-span-2 flex flex-col gap-4">
+      <div class="p-6 border border-gray-200 shadow-md flex justify-between bg-white">
+        <span class="text-lg font-bold">Postingan Terpopuler</span>
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+          </svg>          
+        </button>
+      </div>
+      @!component('components/atoms/post',{
+        postData : {
+          author : {
+            name : "John Doe",
+            avatar : "https://picsum.photos/50/50",
+          },
+          komunitas : "Komunitas Turu",
+          createdAt : "12/12/2020",
+          media : {
+            type : "image",
+            url : "https://picsum.photos/1000/600",
+            alt : "gambar"
+          },
+          text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        }
+      })
+      @!component('components/atoms/post',{
+        postData : {
+          author : {
+            name : "John Doe",
+            avatar : "https://picsum.photos/50/50",
+          },
+          komunitas : "Komunitas Turu",
+          createdAt : "12/12/2020",
+          media : {
+            type : "image",
+            url : "https://picsum.photos/1000/600",
+            alt : "gambar"
+          },
+          text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        }
+      })
+      @!component('components/atoms/post',{
+        postData : {
+          author : {
+            name : "John Doe",
+            avatar : "https://picsum.photos/50/50",
+          },
+          komunitas : "Komunitas Turu",
+          createdAt : "12/12/2020",
+          media : {
+            type : "image",
+            url : "https://picsum.photos/1000/600",
+            alt : "gambar"
+          },
+          text : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        }
+      })
+    </div>
+    @include('pages/sharing/rightSidebar')
+  </div>
+@end
