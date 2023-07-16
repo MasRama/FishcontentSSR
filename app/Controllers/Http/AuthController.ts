@@ -70,9 +70,9 @@ export default class AuthController {
 
   //route DAFTAR AKUN BARU
   public async regis({ request, view }: HttpContextContract) {
-    let kab = request.input('kab').replace(/;/g, ' ')
-    let kec = request.input('kec').replace(/;/g, ' ')
-    let prov = request.input('prov').replace(/;/g, ' ')
+    let kab = "null"
+    let kec = "null"
+    let prov = "null"
 
   function titleCase(str) {
     var splitStr = str?.toLowerCase().split(' ');
@@ -86,15 +86,15 @@ export default class AuthController {
     const emailFind = await User.findBy('email', request.input('email').toLowerCase())
 
     if(request.input('username').length < 3) {
-      return view.render('regis', {error: 'Username harus diatas 3 huruf!'})
+      return view.render('pages/regis', {error: 'Username harus diatas 3 huruf!'})
     }
 
     if(usernameFind) {
-      return view.render('regis', {error: 'Username telah digunakan'})
+      return view.render('pages/regis', {error: 'Username telah digunakan'})
     }
 
     if(emailFind) {
-      return view.render('regis', {error: 'Email telah digunakan'})
+      return view.render('pages/regis', {error: 'Email telah digunakan'})
     }
 
     let alamat = titleCase(`${request.input('detail')}, Kec ${kec}, ${kab}, ${prov}, ${request.input('kd_pos')}`) 
@@ -115,7 +115,7 @@ export default class AuthController {
       let url = `${request.headers().host }/verify/${uuid}`
       verifSend(request.input('email'), url)
 
-     return view.render('login', {success: 'Silahkan verifikasi email anda'})
+     return view.render('pages/login', {success: 'Silahkan verifikasi email anda'})
 
   }
 
